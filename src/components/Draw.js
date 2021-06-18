@@ -12,7 +12,8 @@ const Draw = props =>{
 
         {draw && (props.cards.length > 0) ? 
        
-       <div>{draw.card_ids.map(card_id => <div key={card_id.id}> <img src={props.cards[card_id - 1].image}/></div>)}</div>
+       <div>{draw.card_ids.map(card_id => <div key={card_id.id}> 
+       <Link to={`/cards/${card_id - 1}`}><img src={props.cards[card_id - 1].image}/></Link></div>)}</div>
         : null}<br></br> 
 
         {/* 
