@@ -1,16 +1,31 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {
+  Card, Button, CardImg, CardTitle, CardText, CardGroup,
+  CardSubtitle, CardBody
+} from 'reactstrap';
 
 const MajorArcana = props =>{
 
   return(
-    <div className="Field">
+    <CardGroup>
         <div>{props.cards.slice(0,22).map(card => 
-        <div key={card.id}>
-          <Link to={`/cards/${card.id - 1}`}><img className="display" src={card.image}/></Link>
-        </div>
+
+        <Card key={card.id}>
+          <Link to={`/cards/${card.id - 1}`}>
+            <CardImg top width="100%" src="/assets/318x180.svg"/>
+            {/* src={card.image}  */}
+            <CardBody>          
+              <CardTitle tag="h5">Card title</CardTitle>
+              <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
+              <CardText>This is a wider card with supporting text below.</CardText>
+              <Button>Button</Button>
+            </CardBody>
+          </Link>
+        </Card>
+
         )}</div>
-    </div>
+    </CardGroup>
   )
 }
 

@@ -1,0 +1,21 @@
+.flip{
+  transform: scaleY(-1);
+}
+.card{
+  width:100px;
+  float: left;
+}
+.block{
+  clear: right;
+}
+.ints{
+  width: 100%;
+}
+
+body{
+  background-color: bisque;
+}
+
+.title{
+  color: blue;
+}
