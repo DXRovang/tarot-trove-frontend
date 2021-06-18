@@ -23,5 +23,4 @@ export default function drawReducer(state = {draws: []}, action){
     default:
         return state
   }
-
 }
