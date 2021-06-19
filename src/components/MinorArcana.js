@@ -1,15 +1,29 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {
+  Card, Button, CardImg, CardTitle, CardText, CardGroup,
+   CardBody
+} from 'reactstrap';
 
 const MinorArcana = props =>{
+// debugger
+  return(    <CardGroup>
+    <div>{props.cards.slice(24,78).map(card => 
 
-  return(
-    <div className="Field">
-        <div>{props.cards.slice(23,78).map(card => 
-        <div key={card.id}>
-          <Link to={`/cards/${card.id - 1}`}><img className="display" src={card.image}/></Link></div>
-        )}</div>
-    </div>
+    <Card key={card.id}>
+      <Link to={`/cards/${card.id - 1}`}>
+        <CardImg top width="100%" src={card.image} />
+        <CardBody>          
+          <CardTitle tag="h5">{card.name}</CardTitle>
+          <CardText>{card.summary}</CardText>
+          <Button>Button</Button>
+        </CardBody>
+      </Link>
+    </Card>
+
+    )}</div>
+</CardGroup>
+
   )
 }
 

@@ -6,15 +6,14 @@ import {
 } from 'reactstrap';
 
 const MajorArcana = props =>{
-
+// debugger
   return(
     <CardGroup>
-        <div>{props.cards.slice(0,22).map(card => 
+        <div>{props.cards.slice(0,21).map(card => 
 
         <Card key={card.id}>
           <Link to={`/cards/${card.id - 1}`}>
-            <CardImg top width="100%" src="/assets/318x180.svg"/>
-            {/* src={card.image}  */}
+            <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle tag="h5">Card title</CardTitle>
               <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
