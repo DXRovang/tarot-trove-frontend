@@ -11,65 +11,8 @@ class DrawForm extends React.Component{
     orientations: []
   }
 
-  getOneCard = (arr) => {
-    const randomIndex = Math.floor(Math.random() * arr.length);
-    const item = arr[randomIndex];
-    return item.id;
-  }
-  randBool = () => {
-    const rb = Math.random() < 0.5;
-    return rb;
-  }
-
-  // the only prob here is that it allows doubles
-  getThreeCards = (arr) => {
-    const base = []
-    for(let i = 0; i < 3; i++){
-      base.push(this.getOneCard(arr))
-    }
-    return base
-  }
-
-  threeBool = () => {
-    const base = []
-    for(let i = 0; i < 3; i++){
-      base.push(this.randBool())
-    }
-    return base
-  }
-
-  handleSumbit = (e) =>{
-    e.preventDefault() 
-    if(this.state.layout === "One-Card"){
-    let formData = {
-      layout: this.state.layout,
-      card_ids: [this.getOneCard(this.props.cards)],
-      orientations: [this.randBool()]
-     }
-     this.props.createDraws(formData)
-     this.props.history.push('/draws')
-    }else{
-      let formData = {
-        layout: this.state.layout,
-        card_ids: this.getThreeCards(this.props.cards),
-        orientations: this.threeBool()
-       }
-       this.props.createDraws(formData)
-       this.props.history.push('/draws')
-       
-  }
-}
-    
-  handleChange = (e) =>{
-    this.setState({
-      [e.target.name]: e.target.value
-      // 26:00 Expense part6, whichever onChange is used will get sent here
-    })
-  }
-
   render() {
     return(
-  
       <div className="Field">
         <form onSubmit={e => this.handleSumbit(e)}>
           <select onChange={this.handleChange} name="layout" value={this.state.layout}>
@@ -81,51 +24,139 @@ class DrawForm extends React.Component{
           <button>Draw Cards</button>
         </form>
       </div>
-    
     )
   }
+
+  handleChange = (e) =>{
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  // would like to do this as a switch
+  handleSumbit = (e) =>{
+    e.preventDefault() 
+    if(this.state.layout == "One-Card"){
+    let formData = {
+      layout: this.state.layout,
+      card_ids: [this.getOneCard(this.props.cards)],
+      orientations: [this.randBool()]
+     }
+     this.props.createDraws(formData)
+     this.props.history.push('/draws')
+    }else if(this.state.layout == "Three-Cards"){
+      let formData = {
+        layout: this.state.layout,
+        card_ids: this.getThreeCards(this.props.cards),
+        orientations: this.threeBool()
+       }
+       this.props.createDraws(formData)
+       this.props.history.push('/draws')
+    }else if(this.state.layout == "Five-Cards"){
+      let formData = {
+        layout: this.state.layout,
+        card_ids: this.getFiveCards(this.props.cards),
+        orientations: this.fiveBool()
+       }
+       this.props.createDraws(formData)
+       this.props.history.push('/draws')
+    }else if(this.state.layout == "Celtic Cross"){
+      let formData = {
+        layout: this.state.layout,
+        card_ids: this.getTenCards(this.props.cards),
+        orientations: this.tenBool()
+       }
+       this.props.createDraws(formData)
+       this.props.history.push('/draws')
+    }
+  }
+  
+  // look into refactoring down to 2 methods
+  getOneCard = (arr) => {
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    const item = arr[randomIndex];
+    return item.id;
+  }
+  randBool = () => {
+    const rb = Math.random() < 0.5;
+    return rb;
+  }
+  // how does this work??
+  getThreeCards = (arr) => {
+    const base = [];
+    while(base.length < 3){
+      const r = Math.floor(Math.random() * arr.length);
+      if(base.indexOf(r) === -1) base.push(r);
+    }
+    return base;
+  }
+  threeBool = () => {
+    const base = []
+    while(base.length < 3){
+      base.push(this.randBool())
+    }
+    return base
+  }
+  getFiveCards = (arr) => {
+    const base = [];
+    while(base.length < 5){
+      const r = Math.floor(Math.random() * arr.length);
+      if(base.indexOf(r) === -1) base.push(r);
+    }
+    return base;
+  }
+  fiveBool = () => {
+    const base = []
+    while(base.length < 5){
+      base.push(this.randBool())
+    }
+    return base
+  }
+  getTenCards = (arr) => {
+    const base = [];
+    while(base.length < 10){
+      const r = Math.floor(Math.random() * arr.length);
+      if(base.indexOf(r) === -1) base.push(r);
+    }
+    return base;
+  }
+  tenBool = () => {
+    const base = []
+    while(base.length < 10){
+      base.push(this.randBool())
+    }
+    return base
+  }
+
+
 }
 
 export default connect(null,{createDraws})(DrawForm)
 
 
-  // getThreeCards = (arr) => {
-  //   const randomIndex = Math.floor(Math.random() * arr.length);
-  //   const item = arr[randomIndex];
-  //   return item.id;
+// handleSumbit = (e) =>{
+  //   e.preventDefault() 
+  //   switch(this.state.layout){
+  //     case "One-Card":
+  //     let formData = {
+  //       layout: this.state.layout,
+  //       card_ids: [this.getOneCard(this.props.cards)],
+  //       orientations: [this.randBool()]
+  //     }
+  //   case "Three-Cards":
+  //     let formData = {
+  //       layout: this.state.layout,
+  //       card_ids: this.getThreeCards(this.props.cards),
+  //       orientations: this.threeBool()
+  //      }
+  //   case "Five-Cards":
+  //     let formData = {
+  //       layout: this.state.layout,
+  //       card_ids: this.getFiveCards(this.props.cards),
+  //       orientations: this.fiveBool()
+  //      }
+  //     }
+  //      this.props.createDraws(formData)
+  //      this.props.history.push('/draws')
+    
   // }
-
-  // getFiveCards = (arr) => {
-  //   const randomIndex = Math.floor(Math.random() * arr.length);
-  //   const item = arr[randomIndex];
-  //   return item.id;
-  // }
-
-  // getCelticCross = (arr) => {
-  //   const randomIndex = Math.floor(Math.random() * arr.length);
-  //   const item = arr[randomIndex];
-  //   return item.id;
-  // }
-
-
-
-
-      // }else if(this.state.layout === "Five-Card"){
-    //   let formData = {
-    //     layout: this.state.layout,
-    //     card_ids: this.getFiveCards(this.props.cards),
-    //     orientations: []
-    //    }
-    //    this.props.createDraws(formData)
-    //    this.props.history.push('/draws')
-    // }else if(this.state.layout === "Celtic Cross"){
-    //   let formData = {
-    //     layout: this.state.layout,
-    //     card_ids: this.getCelticCross(this.props.cards),
-    //     orientations: []
-    //    }
-    //    this.props.createDraws(formData)
-    //    this.props.history.push('/draws')
-
-
-
