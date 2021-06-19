@@ -3,14 +3,15 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const DrawList = props =>{
-
+// debugger
   return(
-    <div className="Field" className="list">
-      <div>{props.draws.draws.map(draw => 
-        <div key={draw.id}>
+    <div >
+
+      <div>{props.draws.draws ? props.draws.draws.map(draw => <div key={draw.id}>
           <Link to={`/draws/${draw.id}`}>{draw.layout}: {draw.created_at.slice(0,10)}</Link></div>
-        )}</div>
-         <img className="back" src="tarotback.jpg"/>
+        ) : null}</div>
+
+         <img src="tarotback.jpg"/>
     </div>
   )
 }

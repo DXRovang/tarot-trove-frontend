@@ -6,25 +6,34 @@ class DrawForm extends React.Component{
 
   state = {
     layout: "One-Card",
-    card: ""
+    card_ids: [],
+    orientations: []
   }
 
-  getRandomItem = (arr) => {
+  getOneCard = (arr) => {
     const randomIndex = Math.floor(Math.random() * arr.length);
     const item = arr[randomIndex];
     return item.id;
   }
+  randBool = () => {
+    const rb = Math.random() < 0.5;
+    return rb;
+  }
 
   handleSumbit = (e) =>{
-    e.preventDefault()
+    e.preventDefault() 
+    if(this.state.layout === "One-Card"){
     let formData = {
       layout: this.state.layout,
-      card: this.getRandomItem(this.props.cards)
+      card_ids: [this.getOneCard(this.props.cards)],
+      orientations: [this.randBool()]
      }
-    this.props.createDraws(formData)
-    // you need this.props for dispatch to work
-    this.props.history.push('/draws')
+     this.props.createDraws(formData)
+     this.props.history.push('/draws')
+    }else{
+       console.log("here")
   }
+}
     
   handleChange = (e) =>{
     this.setState({
@@ -53,3 +62,42 @@ class DrawForm extends React.Component{
 }
 
 export default connect(null,{createDraws})(DrawForm)
+
+
+  // getThreeCards = (arr) => {
+  //   const randomIndex = Math.floor(Math.random() * arr.length);
+  //   const item = arr[randomIndex];
+  //   return item.id;
+  // }
+
+  // getFiveCards = (arr) => {
+  //   const randomIndex = Math.floor(Math.random() * arr.length);
+  //   const item = arr[randomIndex];
+  //   return item.id;
+  // }
+
+  // getCelticCross = (arr) => {
+  //   const randomIndex = Math.floor(Math.random() * arr.length);
+  //   const item = arr[randomIndex];
+  //   return item.id;
+  // }
+
+
+
+
+      // }else if(this.state.layout === "Five-Card"){
+    //   let formData = {
+    //     layout: this.state.layout,
+    //     card_ids: this.getFiveCards(this.props.cards),
+    //     orientations: []
+    //    }
+    //    this.props.createDraws(formData)
+    //    this.props.history.push('/draws')
+    // }else if(this.state.layout === "Celtic Cross"){
+    //   let formData = {
+    //     layout: this.state.layout,
+    //     card_ids: this.getCelticCross(this.props.cards),
+    //     orientations: []
+    //    }
+    //    this.props.createDraws(formData)
+    //    this.props.history.push('/draws')

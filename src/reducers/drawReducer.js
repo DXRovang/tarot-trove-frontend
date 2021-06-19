@@ -1,4 +1,5 @@
 export default function drawReducer(state = {draws: []}, action){
+  // debugger
   switch(action.type){
     case "FETCH_DRAWS":
       return {draws: action.payload}

@@ -4,7 +4,11 @@
 .card{
   width:100px;
   float: left;
+  padding: 3px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
+
 .block{
   clear: right;
 }

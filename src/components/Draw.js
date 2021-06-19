@@ -4,19 +4,17 @@ import InterpretationsContainer from '../containers/InterpretationsContainer'
  
 const Draw = props =>{ 
 
-  let draw = props.draws.draws[props.match.params.id - 1]
+  let draw = props.draws.draws.find(draw => draw.id == props.match.params.id)
 
-// debugger
     return(
       <div>
         Layout: {draw ? draw.layout: null}<br></br>
 
         {draw && (props.cards.length > 0) ? 
        
-       <div className="block">{draw.card_ids.map(card_id => <div key={card_id.id}> 
+       <div className="block">{draw.card_ids.map((card_id, i) => <div key={card_id.id}> 
        <Link to={`/cards/${card_id - 1}`}>
-        {draw.orientations[card_id - 1] == false ? 
-        // className="flip" 
+        {draw.orientations[i] === false ? 
          <img className="flip card" src={props.cards[card_id -1].image}/>
          : <img className="card" src={props.cards[card_id - 1].image}/>}
        </Link></div>)}</div>
