@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { createDraws } from '../actions/createDraws'
 
+
 class DrawForm extends React.Component{
 
   state = {
@@ -20,6 +21,23 @@ class DrawForm extends React.Component{
     return rb;
   }
 
+  // the only prob here is that it allows doubles
+  getThreeCards = (arr) => {
+    const base = []
+    for(let i = 0; i < 3; i++){
+      base.push(this.getOneCard(arr))
+    }
+    return base
+  }
+
+  threeBool = () => {
+    const base = []
+    for(let i = 0; i < 3; i++){
+      base.push(this.randBool())
+    }
+    return base
+  }
+
   handleSumbit = (e) =>{
     e.preventDefault() 
     if(this.state.layout === "One-Card"){
@@ -31,7 +49,14 @@ class DrawForm extends React.Component{
      this.props.createDraws(formData)
      this.props.history.push('/draws')
     }else{
-       console.log("here")
+      let formData = {
+        layout: this.state.layout,
+        card_ids: this.getThreeCards(this.props.cards),
+        orientations: this.threeBool()
+       }
+       this.props.createDraws(formData)
+       this.props.history.push('/draws')
+       
   }
 }
     
@@ -101,3 +126,6 @@ export default connect(null,{createDraws})(DrawForm)
     //    }
     //    this.props.createDraws(formData)
     //    this.props.history.push('/draws')
+
+
+
