@@ -1,5 +1,6 @@
 .flip{
-  transform: scaleY(-1);
+  transform: scaleY(-1) scaleX(-1);
+
  
 }
 .card{
@@ -26,9 +27,9 @@
   left:-200px;
   transform: rotate(90deg);
 }
-.future{
-  left: -300;
-}
+/* .future{
+  left: -350;
+} */
 
 .int{
   clear: left;

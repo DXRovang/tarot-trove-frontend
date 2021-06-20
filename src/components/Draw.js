@@ -184,7 +184,7 @@ const Draw = props =>{
 
           : null}
 
-
+          <InterpretationsContainer draw={draw} /> 
           
         </Container>
         )
