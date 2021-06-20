@@ -6,11 +6,9 @@ import {
 } from 'reactstrap';
 
 const MajorArcana = props =>{
-// debugger
   return(
     <CardGroup>
-        <div>{props.cards.slice(0,21).map(card => 
-
+      <div>{props.cards.slice(0,21).map(card => 
         <Card key={card.id}>
           <Link to={`/cards/${card.id - 1}`}>
             <CardImg top width="100%" src={card.image} />
@@ -22,8 +20,7 @@ const MajorArcana = props =>{
             </CardBody>
           </Link>
         </Card>
-
-        )}</div>
+       )}</div>
     </CardGroup>
   )
 }

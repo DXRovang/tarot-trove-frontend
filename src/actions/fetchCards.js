@@ -4,7 +4,8 @@ export function fetchCards(){
     .then(r=>r.json())
     .then(cards=> dispatch({
       type: "FETCH_CARDS", 
-      payload: cards
+      // look at this
+      payload: cards.sort((a,b)=>a.id - b.id)
     }))
   }
 }
