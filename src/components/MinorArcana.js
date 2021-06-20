@@ -9,7 +9,7 @@ const MinorArcana = props =>{
   return(  
     
     <Container>
-      WANDS
+      <div className="suit">WANDS</div>
     <Row>
       <div>{props.cards.slice(22,29).map(card => 
       <Col>
@@ -38,7 +38,7 @@ const MinorArcana = props =>{
       </Col>
      )}</div>
     </Row>
-    CUPS
+    <div className="suit">CUPS</div>
     <Row>
       <div>{props.cards.slice(36,43).map(card => 
       <Col>
@@ -67,7 +67,7 @@ const MinorArcana = props =>{
       </Col>
      )}</div>
     </Row>
-    PENTACLES
+    <div className="suit">PENTACLES</div>
     <Row>
       <div>{props.cards.slice(50,57).map(card => 
       <Col>
@@ -96,7 +96,7 @@ const MinorArcana = props =>{
       </Col>
      )}</div>
     </Row>
-    SWORDS
+    <div className="suit">SWORDS</div>
     <Row>
       <div>{props.cards.slice(64,71).map(card => 
       <Col>

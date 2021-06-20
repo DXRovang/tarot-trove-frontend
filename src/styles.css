@@ -1,5 +1,6 @@
 .flip{
   transform: scaleY(-1);
+ 
 }
 .card{
   width:150px;
@@ -14,12 +15,34 @@
   padding: 5px;
   margin: 5px;
 }
+.base{
+  z-index:1;
+  position:relative;
+}
+.cross{
+  z-index:2;
+  position:relative;
+  top:-1px;
+  left:-200px;
+  transform: rotate(90deg);
+}
+.future{
+  left: -300;
+}
 
 .int{
   clear: left;
 }
 
-
+.suit{
+  color: white;
+  background-color: violet;
+  border-style: solid;
+  border-radius: 2px;
+  border-color: black;
+  padding: 5px;
+  margin: 5px;
+}
 body{
   background-color: bisque;
 }
