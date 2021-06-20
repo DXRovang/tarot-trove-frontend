@@ -17,7 +17,6 @@ class InterpretationForm extends React.Component{
   handleSumbit = (e) =>{
     e.preventDefault()
     this.props.createInterpretations(this.state, this.props.draw.id)
-    //  Expense 9 45:00
     this.setState({
       body: ""
     })

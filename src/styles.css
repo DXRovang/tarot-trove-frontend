@@ -2,11 +2,17 @@
   transform: scaleY(-1);
 }
 .card{
-  width:100px;
+  width:150px;
+  height: 350px;
   float: left;
-  padding: 3px;
-  margin-left: 30px;
-  margin-right: 30px;
+}
+.NavLink{
+  background-color: aqua;
+  border-style: solid;
+  border-radius: 2px;
+  border-color: black;
+  padding: 5px;
+  margin: 5px;
 }
 
 .block{

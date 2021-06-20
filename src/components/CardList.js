@@ -9,7 +9,6 @@ const getRandomItem = (arr) => {
 const CardList = props =>{
 
   const card = getRandomItem(props.cards);
-  // (Math.random() < 0.5) ? card.reversed = true : card.reversed = false
 
   return(
     <div className="Field">

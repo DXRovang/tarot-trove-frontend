@@ -7,8 +7,10 @@ import drawReducer from './reducers/drawReducer'
 import cardReducer from './reducers/cardReducer'
 import {BrowserRouter as Router} from 'react-router-dom'
 import App from './App';
+
+import 'bootstrap/dist/css/bootstrap.css';
 import './styles.css';
-// import 'bootstrap/dist/css/bootstrap.css';
+
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

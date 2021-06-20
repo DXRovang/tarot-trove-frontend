@@ -13,6 +13,7 @@ const Draw = props =>{
         {draw && (props.cards.length > 0) ? 
        
        <div className="block">{draw.card_ids.map((card_id, i) => <div key={card_id.id}> 
+       
        <Link to={`/cards/${card_id - 1}`}>
         {draw.orientations[i] === false ? 
          <img className="flip card" src={props.cards[card_id -1].image}/>
