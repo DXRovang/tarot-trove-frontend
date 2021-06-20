@@ -9,25 +9,22 @@ class Interpretations extends React.Component{
     liked: 0
   }
 
- 
-
-
-  // handleDelete = (interpretation) =>{
-  // this.props.deleteInterpretations(interpretation.draw_id, interpretation.id)
-  //   }
+  handleDelete = (interpretation) =>{
+  this.props.deleteInterpretations(interpretation.draw_id, interpretation.id)
+    }
  
   render(){
-    // debugger
+  
   return (
     
-    <div>
+    <div className="int">
       Interpretation(s): 
       {this.props.draw ? this.props.draw.interpretations.map(interpretation => 
-        <li key={interpretation.id}>
+        <div key={interpretation.id}>
           <Button />
           {interpretation.body} 
-          {/* <button onClick={() => handleDelete(interpretation)}>x</button> */}
-          </li>) : null}<br></br>
+          <button onClick={() => this.handleDelete(interpretation)}>x</button>
+          </div>) : null}<br></br>
     </div>
   )
 }}

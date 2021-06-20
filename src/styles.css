@@ -15,12 +15,10 @@
   margin: 5px;
 }
 
-.block{
-  clear: right;
+.int{
+  clear: left;
 }
-.ints{
-  width: 100%;
-}
+
 
 body{
   background-color: bisque;
