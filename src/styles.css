@@ -8,6 +8,11 @@
   height: 350px;
   float: left;
 }
+.celtic{
+  width:100px;
+  height: 200px;
+  float: left;
+}
 .NavLink{
   background-color: aqua;
   border-style: solid;
@@ -33,6 +38,20 @@
 
 .int{
   clear: left;
+}
+.back{
+  height: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.themed-container{
+  display: block;
+  margin-left: 40%;
+  margin-right: 30%;
+  margin-top: 10px;
 }
 
 .suit{
