@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import InterpretationsContainer from '../containers/InterpretationsContainer'
 import { Container, Row, Col } from 'reactstrap';
+
  
 const Draw = props =>{ 
 
@@ -10,7 +11,7 @@ const Draw = props =>{
   if(draw && draw.layout != "Celtic Cross"){
     return(
       <div>
-        {draw ? draw.created_at.slice(0,10): null}<br></br>
+      Drawn: {draw ? (draw.created_at.slice(0,10)): null}<br></br>
         {draw && (props.cards.length > 0) ? 
           <div>{draw.card_ids.map((card_id, i) => 
             <div key={card_id.id}> 
@@ -29,7 +30,7 @@ const Draw = props =>{
         <Container>
           {draw && (props.cards.length > 0) ? 
           <Container>
-{draw.created_at.slice(0,10)}
+           Drawn: {draw.created_at.slice(0,10)}
             <Row>
             <Col sm={{ size: true, offset: 4 }}>
               <div key={draw.card_ids[0].id}>
@@ -121,6 +122,7 @@ const Draw = props =>{
             </Col>
 
             </Row>
+            <Row>
             <Col sm={{ size: true, offset: 10 }}>
               <div key={draw.card_ids[9].id}>
                 <Link to={`/cards/${draw.card_ids[9] - 1}`}>
@@ -130,7 +132,7 @@ const Draw = props =>{
                 </Link>
               </div>
             </Col>
-            <Row>
+            
 
             </Row>
           

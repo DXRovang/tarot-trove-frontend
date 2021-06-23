@@ -13,7 +13,8 @@ class DrawForm extends React.Component{
 
   render() {
     return(
-      <div className="Field">
+      <>
+      <div className="center">
         <form onSubmit={e => this.handleSumbit(e)}>
           <select onChange={this.handleChange} name="layout" value={this.state.layout}>
             <option>One-Card</option>
@@ -23,7 +24,11 @@ class DrawForm extends React.Component{
           </select>
           <button>Draw Cards</button>
         </form>
+         
       </div>
+      <img className="back"src="../tarotback.jpg"/> 
+      
+      </>
     )
   }
 

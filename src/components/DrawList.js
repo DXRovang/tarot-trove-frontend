@@ -1,7 +1,7 @@
 
 import React from 'react'
 import {Link} from 'react-router-dom'
-import { Container } from 'reactstrap';
+// import { Container } from 'reactstrap';
 
 class DrawList extends React.Component{
 state = {
@@ -20,10 +20,21 @@ state = {
 render(){
   if(this.state.layout == "" || this.state.layout == "All Spreads"){
     return(
+      <>
+      <div className="blurb left">
+        <p>Welcome!   </p>
+        
+        <p>This page is intended to aid in the study of Tarot Divination.</p>
+
+        <p>You're welcome to browse our previous draws and add your own thoughts, <br></br>
+          or create a brand new draw and be the first to offer an interpretation.
+        </p>
+        <p>We hope you enjoy the site!</p>
+      </div>
       <div className='themed-container'>
       {/* <Container className="themed-container" fluid="md"> */}
-  
-          <form className="center" onSubmit={e => this.handleSumbit(e)}>
+      
+          <form className="right" onSubmit={e => this.handleSumbit(e)}>
             <select onChange={this.handleChange} name="layout" value={this.state.layout}>
               <option>All Spreads</option>
               <option>One-Card</option>
@@ -31,9 +42,9 @@ render(){
               <option>Five-Cards</option>
               <option>Celtic Cross</option>
             </select>
-          </form>
+          </form><br></br>
     
-          <div className="center">{this.props.draws.draws ? this.props.draws.draws.map(draw => 
+          <div className="right">{this.props.draws.draws ? this.props.draws.draws.map(draw => 
    
           <div key={draw.id}>
             <Link to={`/draws/${draw.id}`}>{draw.layout}: {draw.created_at.slice(0,10)}</Link></div>
@@ -41,17 +52,28 @@ render(){
           </div>
    
       {/* </Container> */}
-      <img className="back" src="tarotback.jpg"/>  
+      <img className="back right" src="tarotback.jpg"/>  
       </div>
-
+</>
     )
   }else{
     const fullList = this.props.draws.draws
     const filterList = fullList.filter(draw => draw.layout == this.state.layout)
-    return(
+    return(     <>
+      <div className="blurb left">
+        <p>Welcome!   </p>
+        
+        <p>This page is intended to aid in the study of Tarot Divination.</p>
+
+        <p>You're welcome to browse our previous draws and add your own thoughts, <br></br>
+          or create a brand new draw and be the first to offer an interpretation.
+        </p>
+        <p>We hope you enjoy the site!</p>
+      </div>
       <div className='themed-container'>
+        
          {/* <Container className="themed-container" fluid="md"> */}
-          <form className="center" onSubmit={e => this.handleSumbit(e)}>
+          <form className="right" onSubmit={e => this.handleSumbit(e)}>
             <select onChange={this.handleChange} name="layout" value={this.state.layout}>
               <option>All Spreads</option>
               <option>One-Card</option>
@@ -59,15 +81,15 @@ render(){
               <option>Five-Cards</option>
               <option>Celtic Cross</option>
             </select>
-          </form>
+          </form><br></br>
   
-        <div className="center" >{this.props.draws.draws ? filterList.map(draw => <div key={draw.id}>
+        <div className="right" >{this.props.draws.draws ? filterList.map(draw => <div key={draw.id}>
             <Link to={`/draws/${draw.id}`}>{draw.layout}: {draw.created_at.slice(0,10)}</Link></div>
           ) : null}</div>
   
   {/* </Container> */}
-      <img className="back" src="tarotback.jpg"/>  
-      </div>
+      <img className="back right" src="tarotback.jpg"/>  
+      </div></>
     )
 
 }

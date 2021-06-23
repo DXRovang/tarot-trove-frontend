@@ -31,8 +31,8 @@ return (<>
   <NavItem>
   <NavLink href="/majorarcana">Major Arcana</NavLink>
   </NavItem>
-  <NavItem>
-  <NavLink href="/minorarcana">Minor Arcana</NavLink>
+  <NavItem >
+  <NavLink  href="/minorarcana">Minor Arcana</NavLink>
   </NavItem>
   </Nav>
   {/* <Link to="/draws" className="NavLink">Readings</Link>

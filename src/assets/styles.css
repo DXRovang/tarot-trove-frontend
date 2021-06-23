@@ -15,14 +15,7 @@
   /* color: whitesmoke; */
   background-color: darkred;
 }
-/* .NavLink{
-  background-color: aqua;
-  border-style: solid;
-  border-radius: 2px;
-  border-color: black;
-  padding: 5px;
-  margin: 5px;
-} */
+
 .base{
   z-index:1;
   position:relative;
@@ -59,11 +52,16 @@
   border-color: black;
   padding: 5px;
   margin: 5px;
+  width: 95%;
 }
 body{
   background-color: bisque;
 }
-
+.right{
+  float: right;
+  clear: right;
+  margin-right: 15px;
+}
 .title{
   text-align: center;
   font-size: 58px;
@@ -81,4 +79,10 @@ body{
 }
 .left{
   margin-left: 4%;
+  float: left;
+}
+.blurb{
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+
 }
