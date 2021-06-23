@@ -7,10 +7,10 @@ const Draw = props =>{
 
   let draw = props.draws.draws.find(draw => draw.id == props.match.params.id)
 
-  if(draw && draw.layout == "One-Card"){
+  if(draw && draw.layout != "Celtic Cross"){
     return(
       <div>
-        Layout: {draw ? draw.layout: null}<br></br>
+        {draw ? draw.created_at.slice(0,10): null}<br></br>
         {draw && (props.cards.length > 0) ? 
           <div>{draw.card_ids.map((card_id, i) => 
             <div key={card_id.id}> 
@@ -24,47 +24,12 @@ const Draw = props =>{
         : null}
         <InterpretationsContainer draw={draw} />
       </div>)
-    }else if(draw && draw.layout == "Three-Cards"){
-      return(
-        <div>
-          Layout: {draw ? draw.layout: null}<br></br>
-          {draw && (props.cards.length > 0) ? 
-            <div>{draw.card_ids.map((card_id, i) => 
-              <div key={card_id.id}> 
-                <Link to={`/cards/${card_id - 1}`}>
-                  {draw.orientations[i] === false ? 
-                  <img className="flip card" src={props.cards[card_id -1].image}/>
-                  : <img className="card" src={props.cards[card_id - 1].image}/>}
-                </Link>
-              </div>)}
-            </div>
-          : null}
-          <InterpretationsContainer draw={draw} />
-        </div>)
-    }else if(draw && draw.layout == "Five-Cards"){
-      return(
-        <div>
-          Layout: {draw ? draw.layout: null}<br></br>
-          {draw && (props.cards.length > 0) ? 
-            <div>{draw.card_ids.map((card_id, i) => 
-              <div key={card_id.id}> 
-                <Link to={`/cards/${card_id - 1}`}>
-                  {draw.orientations[i] === false ? 
-                  <img className="flip card" src={props.cards[card_id -1].image}/>
-                  : <img className="card" src={props.cards[card_id - 1].image}/>}
-                </Link>
-              </div>)}
-            </div>
-          : null}
-          <InterpretationsContainer draw={draw} />
-        </div>)
     }else if(draw && draw.layout == "Celtic Cross"){
       return(
-        // CELTIC CROSS
         <Container>
           {draw && (props.cards.length > 0) ? 
           <Container>
-
+{draw.created_at.slice(0,10)}
             <Row>
             <Col sm={{ size: true, offset: 4 }}>
               <div key={draw.card_ids[0].id}>
@@ -185,59 +150,3 @@ const Draw = props =>{
   }
   export default Draw
 
-
-
-          {/* Layout: {draw ? draw.layout: null}<br></br>
-
-          {draw && (props.cards.length > 0) ? 
-          <Container>
-          <Row>
-            <div>{draw.card_ids.slice(0,2).map((card_id, i) => 
-            // this is the key to arranging; have to do all ten, though
-            <Col sm={{ size: 'auto', offset: 2 }}>
-              <div key={card_id.id}> 
-                <Link to={`/cards/${card_id - 1}`}>
-                  {draw.orientations[i] === false ? 
-                  <img className="flip card" src={props.cards[card_id -1].image}/>
-                  : <img className="card" src={props.cards[card_id - 1].image}/>}
-                </Link>
-              </div></Col>)}
-            </div>
-          </Row>
-          <Row>
-            <div>{draw.card_ids.slice(2,6).map((card_id, i) => 
-              <div key={card_id.id}> 
-                <Link to={`/cards/${card_id - 1}`}>
-                  {draw.orientations[i] === false ? 
-                  <img className="flip card" src={props.cards[card_id -1].image}/>
-                  : <img className="card" src={props.cards[card_id - 1].image}/>}
-                </Link>
-              </div>)}
-            </div>
-          </Row>
-          <Row>
-            <div>{draw.card_ids.slice(6,8).map((card_id, i) => 
-              <div key={card_id.id}> 
-                <Link to={`/cards/${card_id - 1}`}>
-                  {draw.orientations[i] === false ? 
-                  <img className="flip card" src={props.cards[card_id -1].image}/>
-                  : <img className="card" src={props.cards[card_id - 1].image}/>}
-                </Link>
-              </div>)}
-            </div>
-          </Row>
-          <Row>
-            <div>{draw.card_ids.slice(8,9).map((card_id, i) => 
-              <div key={card_id.id}> 
-                <Link to={`/cards/${card_id - 1}`}>
-                  {draw.orientations[i] === false ? 
-                  <img className="flip card" src={props.cards[card_id -1].image}/>
-                  : <img className="card" src={props.cards[card_id - 1].image}/>}
-                </Link>
-              </div>)}
-            </div>
-          </Row>
-          </Container>
-          : null}
-          
-          <InterpretationsContainer draw={draw} /> */}

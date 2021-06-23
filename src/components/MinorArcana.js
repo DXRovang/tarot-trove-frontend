@@ -8,11 +8,11 @@ import {
 const MinorArcana = props =>{
   return(  
     
-    <Container>
-      <div className="suit">WANDS</div>
-    <Row>
+    <Container className="left">
+      <div className="suit" >WANDS</div>
+    <Row className="xenter" >
       <div>{props.cards.slice(22,29).map(card => 
-      <Col>
+      <Col className="center">
         <Card key={card.id}>
           <Link to={`/cards/${card.id - 1}`}>
             <CardImg top width="100%" src={card.image} />
@@ -24,7 +24,7 @@ const MinorArcana = props =>{
       </Col>
      )}</div>
     </Row>
-    <Row>
+    <Row className="xenter" >
       <div>{props.cards.slice(29,36).map(card => 
       <Col>
         <Card key={card.id}>
@@ -37,9 +37,9 @@ const MinorArcana = props =>{
         </Card>
       </Col>
      )}</div>
-    </Row>
+    </Row  >
     <div className="suit">CUPS</div>
-    <Row>
+    <Row className="xenter" >
       <div>{props.cards.slice(36,43).map(card => 
       <Col>
         <Card key={card.id}>
@@ -53,7 +53,7 @@ const MinorArcana = props =>{
       </Col>
      )}</div>
     </Row>
-    <Row>
+    <Row className="xenter" >
       <div>{props.cards.slice(43,50).map(card => 
       <Col>
         <Card key={card.id}>
@@ -68,7 +68,7 @@ const MinorArcana = props =>{
      )}</div>
     </Row>
     <div className="suit">PENTACLES</div>
-    <Row>
+    <Row className="xenter" >
       <div>{props.cards.slice(50,57).map(card => 
       <Col>
         <Card key={card.id}>
@@ -82,7 +82,7 @@ const MinorArcana = props =>{
       </Col>
      )}</div>
     </Row>
-    <Row>
+    <Row className="xenter" >
       <div>{props.cards.slice(57,64).map(card => 
       <Col>
         <Card key={card.id}>
@@ -97,7 +97,7 @@ const MinorArcana = props =>{
      )}</div>
     </Row>
     <div className="suit">SWORDS</div>
-    <Row>
+    <Row className="xenter" >
       <div>{props.cards.slice(64,71).map(card => 
       <Col>
         <Card key={card.id}>
@@ -111,7 +111,7 @@ const MinorArcana = props =>{
       </Col>
      )}</div>
     </Row>
-    <Row>
+    <Row className="xenter" >
       <div>{props.cards.slice(71,78).map(card => 
       <Col>
         <Card key={card.id}>

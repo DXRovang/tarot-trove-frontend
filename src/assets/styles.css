@@ -1,7 +1,5 @@
 .flip{
-  transform: scaleY(-1) scaleX(-1);
-
- 
+  transform: scaleY(-1) scaleX(-1); 
 }
 .card{
   width:150px;
@@ -13,14 +11,18 @@
   height: 200px;
   float: left;
 }
-.NavLink{
+.navbar{
+  /* color: whitesmoke; */
+  background-color: darkred;
+}
+/* .NavLink{
   background-color: aqua;
   border-style: solid;
   border-radius: 2px;
   border-color: black;
   padding: 5px;
   margin: 5px;
-}
+} */
 .base{
   z-index:1;
   position:relative;
@@ -32,9 +34,6 @@
   left:-200px;
   transform: rotate(90deg);
 }
-/* .future{
-  left: -350;
-} */
 
 .int{
   clear: left;
@@ -48,10 +47,8 @@
 }
 
 .themed-container{
-  display: block;
-  margin-left: 40%;
-  margin-right: 30%;
-  margin-top: 10px;
+  margin: 10px;
+  text-align: center;
 }
 
 .suit{
@@ -68,5 +65,20 @@ body{
 }
 
 .title{
+  text-align: center;
+  font-size: 58px;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
   color: blue;
+}
+.center{
+  text-align: center;
+}
+.xenter{
+  align-content: center;
+  /* display: block; */
+  margin-left: auto;
+  margin-right: auto;
+}
+.left{
+  margin-left: 4%;
 }
