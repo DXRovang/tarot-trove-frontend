@@ -1,10 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import InterpretationsContainer from '../containers/InterpretationsContainer'
-import {
-  Card, Container, Row, Col, CardImg, CardTitle, 
-   CardBody
-} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
  
 const Draw = props =>{ 
 
@@ -90,9 +87,7 @@ const Draw = props =>{
             </Row>
 
             <Row>
-            <Col 
-            // sm={{ size: true, offset: 1}}
-            >
+            <Col >
               <div key={draw.card_ids[2].id}>
                 <Link to={`/cards/${draw.card_ids[2] - 1}`}>
                       {draw.orientations[2] === false ? 
@@ -110,9 +105,7 @@ const Draw = props =>{
                 </Link>
               </div>
             </Col>
-            <Col 
-            // sm={{ size: true, offset: 2}}
-            >
+            <Col >
               <div key={draw.card_ids[4].id}>
                 <Link to={`/cards/${draw.card_ids[4] - 1}`}>
                       {draw.orientations[4] === false ? 
@@ -121,9 +114,7 @@ const Draw = props =>{
                 </Link>
               </div>
             </Col>
-            <Col 
-            // sm={{ size: true, offset: 1}}
-            >
+            <Col >
               <div key={draw.card_ids[5].id}>
                 <Link to={`/cards/${draw.card_ids[5] - 1}`}>
                       {draw.orientations[5] === false ? 
@@ -132,9 +123,7 @@ const Draw = props =>{
                 </Link>
               </div>
             </Col>
-            <Col 
-            // sm={{ size: true, offset: 1}}
-            >
+            <Col  >
               <div key={draw.card_ids[6].id}>
                 <Link to={`/cards/${draw.card_ids[6] - 1}`}>
                       {draw.orientations[6] === false ? 
@@ -188,6 +177,10 @@ const Draw = props =>{
           
         </Container>
         )
+    }else{
+      return(
+        null
+      )
     }
   }
   export default Draw

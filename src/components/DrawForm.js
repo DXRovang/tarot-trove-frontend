@@ -36,6 +36,7 @@ class DrawForm extends React.Component{
   // would like to do this as a switch
   handleSumbit = (e) =>{
     e.preventDefault() 
+    
     if(this.state.layout == "One-Card"){
     let formData = {
       layout: this.state.layout,
