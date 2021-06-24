@@ -5,13 +5,13 @@ const Card = props =>{
   let card = props.cards[props.match.params.id]
   
   return(
-    <div>
-    Name: {card ? card.name: null} - Type: {card ? card.cardType : null}<br></br>
-    {card ? <img src={card.image}/> : null}<br></br>
+    <div className="single">
+    {card ? <img className="card left"src={card.image}/> : null}<br></br>
+    <div className="left">
     <div>Description: {card ? card.desc : null}</div><br></br>
     <div>Meaning(up): {card ? card.meaning_up : null}</div><br></br>
     <div>Meaning(rev): {card ? card.meaning_rev : null}</div><br></br>
-    <div>Summary: {card ? card.summary : null}</div>
+    <div>Summary: {card ? card.summary : null}</div></div>
   </div>
   )
 }

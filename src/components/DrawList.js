@@ -61,12 +61,13 @@ render(){
     const filterList = fullList.filter(draw => draw.layout == this.state.layout)
     return(     <>
       <div className="blurb left">
-        <p>Welcome!   </p>
+        <p>Welcome!</p>
         
         <p>This page is intended to aid in the study of Tarot Divination.</p>
 
-        <p>You're welcome to browse our previous draws and add your own thoughts, <br></br>
-          or create a brand new draw and be the first to offer an interpretation.
+        <p>You're welcome to browse our previous draws<br></br> 
+          and add your own thoughts, <br></br>
+          or create a brand new draw<br></br> and be the first to offer an interpretation.
         </p>
         <p>We hope you enjoy the site!</p>
       </div>
@@ -88,7 +89,7 @@ render(){
           ) : null}</div>
   
   {/* </Container> */}
-      <img className="back right" src="tarotback.jpg"/>  
+      <img className="back right readimg" src="tarotback.jpg"/>  
       </div></>
     )
 

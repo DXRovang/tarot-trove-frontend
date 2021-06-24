@@ -12,11 +12,13 @@ const CardList = props =>{
 
   return(
     <div className="Field">
-    Name: {card ? card.name: null} - Type: {card ? card.cardType : null}<br></br>
-    {card ? <img src={card.image}/> : null}<br></br>
+      <div className="left">
+    Name: {card ? card.name: null} - Type: {card ? card.cardType : null}</div><br></br>
+    {card ? <img className="card left" src={card.image}/> : null}<br></br>
+    <div className="single left">
     <div className="space">Meaning(up): {card ? card.meaning_up : null}</div>
     <div className="space">Meaning(rev): {card ? card.meaning_rev : null}</div><br></br>
-    <div className="space">Summary: {card ? card.summary : null}</div>
+    <div className="space">Summary: {card ? card.summary : null}</div></div>
   </div>
   )
 }
