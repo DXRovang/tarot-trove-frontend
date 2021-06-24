@@ -11,8 +11,8 @@ const MinorArcana = props =>{
     <Container className="left">
       <div className="suit" >WANDS</div>
     <Row className="xenter" >
-      <div>{props.cards.slice(22,29).map(card => 
-      <Col className="center">
+      <div >{props.cards.slice(22,29).map(card => 
+      <Col >
         <Card key={card.id}>
           <Link to={`/cards/${card.id - 1}`}>
             <CardImg top width="100%" src={card.image} />

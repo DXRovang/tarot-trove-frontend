@@ -10,15 +10,15 @@ const Draw = props =>{
 
   if(draw && draw.layout != "Celtic Cross"){
     return(
-      <div >
+      <div className="notCross" >
       <div className="blurb">Drawn: {draw ? (draw.created_at.slice(0,10)): null}<br></br></div>
         {draw && (props.cards.length > 0) ? 
           <div>{draw.card_ids.map((card_id, i) => 
             <div key={card_id.id}> 
               <Link to={`/cards/${card_id - 1}`}>
                 {draw.orientations[i] === false ? 
-                <img className="flip card" src={props.cards[card_id -1].image}/>
-                : <img className="card" src={props.cards[card_id - 1].image}/>}
+                <img className="flip card space" src={props.cards[card_id -1].image}/>
+                : <img className="card space" src={props.cards[card_id - 1].image}/>}
               </Link>
             </div>)}
           </div>

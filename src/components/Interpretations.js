@@ -21,9 +21,9 @@ class Interpretations extends React.Component{
       Interpretation(s): 
       {this.props.draw ? this.props.draw.interpretations.map(interpretation => 
         <div key={interpretation.id}>
-          <Button />
-          {interpretation.body} 
-          <button onClick={() => this.handleDelete(interpretation)}>x</button>
+          
+          <button onClick={() => this.handleDelete(interpretation)}>x</button> {interpretation.body}
+          {/* <Button /> */}
           </div>) : null}<br></br>
     </div>
   )
