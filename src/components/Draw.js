@@ -10,8 +10,8 @@ const Draw = props =>{
 
   if(draw && draw.layout != "Celtic Cross"){
     return(
-      <div>
-      Drawn: {draw ? (draw.created_at.slice(0,10)): null}<br></br>
+      <div >
+      <div className="blurb">Drawn: {draw ? (draw.created_at.slice(0,10)): null}<br></br></div>
         {draw && (props.cards.length > 0) ? 
           <div>{draw.card_ids.map((card_id, i) => 
             <div key={card_id.id}> 
@@ -30,7 +30,7 @@ const Draw = props =>{
         <Container>
           {draw && (props.cards.length > 0) ? 
           <Container>
-           Drawn: {draw.created_at.slice(0,10)}
+      <div className="blurb">Drawn: {draw ? (draw.created_at.slice(0,10)): null}<br></br></div>
             <Row>
             <Col sm={{ size: true, offset: 4 }}>
               <div key={draw.card_ids[0].id}>

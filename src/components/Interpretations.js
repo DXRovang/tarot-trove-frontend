@@ -17,7 +17,7 @@ class Interpretations extends React.Component{
   
   return (
     
-    <div className="int">
+    <div className="int blurb">
       Interpretation(s): 
       {this.props.draw ? this.props.draw.interpretations.map(interpretation => 
         <div key={interpretation.id}>

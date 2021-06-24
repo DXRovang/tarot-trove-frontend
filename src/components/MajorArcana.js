@@ -16,7 +16,7 @@ const MajorArcana = props =>{
             <Link to={`/cards/${card.id - 1}`}>
               <CardImg top width="100%" src={card.image} />
               <CardBody>          
-                <CardTitle tag="h5">{card.name}</CardTitle>
+                <CardTitle className="CardTitle"tag="h5">{card.name}</CardTitle>
                 <CardSubtitle tag="h6" className="mb-2 text-muted">{card.id - 1}</CardSubtitle>
               </CardBody>
             </Link>
@@ -31,7 +31,7 @@ const MajorArcana = props =>{
             <Link to={`/cards/${card.id - 1}`}>
               <CardImg top width="100%" src={card.image} />
               <CardBody>          
-                <CardTitle tag="h5">{card.name}</CardTitle>
+                <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
                 <CardSubtitle tag="h6" className="mb-2 text-muted">{card.id - 1}</CardSubtitle>
               </CardBody>
             </Link>
@@ -46,7 +46,7 @@ const MajorArcana = props =>{
             <Link to={`/cards/${card.id - 1}`}>
               <CardImg top width="100%" src={card.image} />
               <CardBody>          
-                <CardTitle tag="h5">{card.name}</CardTitle>
+                <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
                 <CardSubtitle tag="h6" className="mb-2 text-muted">{card.id - 1}</CardSubtitle>    
               </CardBody>
             </Link>
@@ -61,7 +61,7 @@ const MajorArcana = props =>{
             <Link to={`/cards/${card.id - 1}`}>
               <CardImg top width="100%" src={card.image} />
               <CardBody>          
-                <CardTitle tag="h5">{card.name}</CardTitle>
+                <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
                 <CardSubtitle tag="h6" className="mb-2 text-muted">{card.id - 1}</CardSubtitle>
               </CardBody>
             </Link>

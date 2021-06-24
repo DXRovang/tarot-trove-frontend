@@ -34,20 +34,20 @@ render(){
       <div className='themed-container'>
       {/* <Container className="themed-container" fluid="md"> */}
       
-          <form className="right" onSubmit={e => this.handleSumbit(e)}>
+          <form className="right list option" onSubmit={e => this.handleSumbit(e)}>
             <select onChange={this.handleChange} name="layout" value={this.state.layout}>
-              <option>All Spreads</option>
-              <option>One-Card</option>
-              <option>Three-Cards</option>
-              <option>Five-Cards</option>
-              <option>Celtic Cross</option>
+              <option >All Spreads</option>
+              <option >One-Card</option>
+              <option >Three-Cards</option>
+              <option >Five-Cards</option>
+              <option >Celtic Cross</option>
             </select>
           </form><br></br>
     
-          <div className="right">{this.props.draws.draws ? this.props.draws.draws.map(draw => 
+          <div className="right list">{this.props.draws.draws ? this.props.draws.draws.map(draw => 
    
           <div key={draw.id}>
-            <Link to={`/draws/${draw.id}`}>{draw.layout}: {draw.created_at.slice(0,10)}</Link></div>
+            <Link className="list" to={`/draws/${draw.id}`}>{draw.layout}: {draw.created_at.slice(0,10)}</Link></div>
           ) : null}
           </div>
    
@@ -73,18 +73,18 @@ render(){
       <div className='themed-container'>
         
          {/* <Container className="themed-container" fluid="md"> */}
-          <form className="right" onSubmit={e => this.handleSumbit(e)}>
+          <form className="right list option" onSubmit={e => this.handleSumbit(e)}>
             <select onChange={this.handleChange} name="layout" value={this.state.layout}>
-              <option>All Spreads</option>
-              <option>One-Card</option>
-              <option>Three-Cards</option>
-              <option>Five-Cards</option>
-              <option>Celtic Cross</option>
+              <option >All Spreads</option>
+              <option >One-Card</option>
+              <option >Three-Cards</option>
+              <option >Five-Cards</option>
+              <option >Celtic Cross</option>
             </select>
           </form><br></br>
   
-        <div className="right" >{this.props.draws.draws ? filterList.map(draw => <div key={draw.id}>
-            <Link to={`/draws/${draw.id}`}>{draw.layout}: {draw.created_at.slice(0,10)}</Link></div>
+        <div className="right list" >{this.props.draws.draws ? filterList.map(draw => <div key={draw.id}>
+            <Link className="list" to={`/draws/${draw.id}`}>{draw.layout}: {draw.created_at.slice(0,10)}</Link></div>
           ) : null}</div>
   
   {/* </Container> */}
