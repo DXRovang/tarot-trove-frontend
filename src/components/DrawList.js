@@ -99,15 +99,3 @@ render(){
 
 export default DrawList
 
-
-// showDropdown(){
-//   <form className="center" onSubmit={e => this.handleSumbit(e)}>
-//     <select onChange={this.handleChange} name="layout" value={this.state.layout}>
-//       <option>All Spreads</option>
-//       <option>One-Card</option>
-//       <option>Three-Cards</option>
-//       <option>Five-Cards</option>
-//       <option>Celtic Cross</option>
-//     </select>
-//   </form>
-// }
