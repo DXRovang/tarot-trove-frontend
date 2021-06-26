@@ -52,7 +52,7 @@ render(){
           </div>
    
       {/* </Container> */}
-      <img className="back right" src="tarotback.jpg"/>  
+      <img className="back right" src="./assets/tarotback.jpg"/>  
       </div>
 </>
     )
@@ -89,7 +89,7 @@ render(){
           ) : null}</div>
   
   {/* </Container> */}
-      <img className="back right readimg" src="tarotback.jpg"/>  
+      <img className="back right readimg" src="./assets/tarotback.jpg"/>  
       </div></>
     )
 
