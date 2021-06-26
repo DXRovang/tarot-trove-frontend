@@ -19,15 +19,15 @@ componentDidMount(){
       return(
         <div>
           <Switch>
-            <Route exact path='/cards'>
+            <Route exact path='tarot-trove-frontend/cards'>
                 <CardList cards={this.props.cards}/>
             </Route>
-            <Route path='/cards/:id' render={(routerProps) => 
+            <Route path='tarot-trove-frontend/cards/:id' render={(routerProps) => 
                 <Card {...routerProps} cards={this.props.cards} />}/>
-            <Route path='/majorarcana'>
+            <Route path='tarot-trove-frontend/majorarcana'>
                 <MajorArcana cards={this.props.cards}/>
             </Route>
-            <Route path='/minorarcana'>
+            <Route path='tarot-trove-frontend/minorarcana'>
                 <MinorArcana cards={this.props.cards}/>
             </Route>
           </Switch>

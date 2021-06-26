@@ -20,11 +20,11 @@ componentDidMount(){
       return(
         <div>
           <Switch>
-          <Route path='/draws/new' render={(routerProps) => 
+          <Route path='tarot-trove-frontend/draws/new' render={(routerProps) => 
                 <DrawForm {...routerProps} cards={this.props.cards} draws={this.props.draws} />} /> 
-            <Route exact path='/draws' render={(routerProps) => 
+            <Route exact path='tarot-trove-frontend/draws' render={(routerProps) => 
                 <DrawList {...routerProps} draws={this.props.draws} />} />
-            <Route path='/draws/:id' render={(routerProps) => 
+            <Route path='tarot-trove-frontend/draws/:id' render={(routerProps) => 
               <>
                 <Draw {...routerProps} cards={this.props.cards} draws={this.props.draws} />
               </> 
