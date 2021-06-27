@@ -18,7 +18,7 @@ componentDidMount(){
     render(){
       return(
         <>
-        <HashRouter basename='/'>
+        {/* <HashRouter basename='/'> */}
           <Switch>
             <Route exact path='/cards'>
                 <CardList cards={this.props.cards}/>
@@ -32,7 +32,7 @@ componentDidMount(){
                 <MinorArcana cards={this.props.cards}/>
             </Route>
           </Switch>
-        </HashRouter>
+        {/* </HashRouter> */}
         </>
       )
     }

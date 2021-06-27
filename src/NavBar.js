@@ -20,19 +20,19 @@ return (<>
 <Navbar dark expand="md">
 <Nav className="mr-auto" navbar>
             <NavItem>
-  <NavLink href="/#/draws">Readings</NavLink>
+  <NavLink href="/draws">Readings</NavLink>
   </NavItem>
   <NavItem>
-  <NavLink href="/#/draws/new">New Draw</NavLink>
+  <NavLink href="/draws/new">New Draw</NavLink>
   </NavItem>
   <NavItem>
-  <NavLink href="/#/cards">Random Card</NavLink>
+  <NavLink href="/cards">Random Card</NavLink>
   </NavItem>
   <NavItem>
-  <NavLink href="/#/majorarcana">Major Arcana</NavLink>
+  <NavLink href="/majorarcana">Major Arcana</NavLink>
   </NavItem>
   <NavItem >
-  <NavLink  href="/#/minorarcana">Minor Arcana</NavLink>
+  <NavLink  href="/minorarcana">Minor Arcana</NavLink>
   </NavItem>
   </Nav>
   {/* <Link to="/draws" className="NavLink">Readings</Link>

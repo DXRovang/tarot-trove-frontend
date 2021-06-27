@@ -19,7 +19,7 @@ componentDidMount(){
     render(){
       return(
         <>
-        <HashRouter basename='/'>
+        {/* <HashRouter basename='/'> */}
           <Switch>
           <Route path='/draws/new' render={(routerProps) => 
                 <DrawForm {...routerProps} cards={this.props.cards} draws={this.props.draws} />} /> 
@@ -31,7 +31,7 @@ componentDidMount(){
               </> 
             }/>
           </Switch>
-        </HashRouter>
+        {/* </HashRouter> */}
         </>
       )
     }
