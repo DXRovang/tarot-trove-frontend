@@ -5,6 +5,7 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import drawReducer from './reducers/drawReducer'
 import cardReducer from './reducers/cardReducer'
+// import {HashRouter as Router} from 'react-router-dom'
 import {BrowserRouter as Router} from 'react-router-dom'
 import App from './App';
 
