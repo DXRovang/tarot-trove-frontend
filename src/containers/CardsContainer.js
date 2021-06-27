@@ -18,7 +18,7 @@ componentDidMount(){
     render(){
       return(
         <>
-        <HashRouter basename='/tarot-trove-backend'>
+        <HashRouter basename='/tarot-trove-frontend'>
           <Switch>
             <Route exact path='/cards'>
                 <CardList cards={this.props.cards}/>
