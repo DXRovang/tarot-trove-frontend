@@ -19,7 +19,7 @@ componentDidMount(){
     render(){
       return(
         <>
-        <HashRouter basename='//tarot-trove-backend'>
+        <HashRouter basename='/tarot-trove-backend'>
           <Switch>
           <Route path='/draws/new' render={(routerProps) => 
                 <DrawForm {...routerProps} cards={this.props.cards} draws={this.props.draws} />} /> 
