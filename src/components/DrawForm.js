@@ -14,7 +14,7 @@ class DrawForm extends React.Component{
   render() {
     return(
       <>
-      <div className="center">
+      <div className="center drawlist">
         <form onSubmit={e => this.handleSumbit(e)}>
           <select onChange={this.handleChange} name="layout" value={this.state.layout}>
             <option>One-Card</option>
@@ -26,7 +26,7 @@ class DrawForm extends React.Component{
         </form>
          
       </div>
-      <img className="back"src="../tarotback.jpg"/> 
+      {/* <img className="back"src="tarotback.jpg"/>  */}
       
       </>
     )
