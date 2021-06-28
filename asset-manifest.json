@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/tarot-trove-frontend/static/css/main.47e41fea.chunk.css",
-    "main.js": "/tarot-trove-frontend/static/js/main.2fd05d31.chunk.js",
-    "main.js.map": "/tarot-trove-frontend/static/js/main.2fd05d31.chunk.js.map",
+    "main.css": "/tarot-trove-frontend/static/css/main.b6a7accd.chunk.css",
+    "main.js": "/tarot-trove-frontend/static/js/main.d307299a.chunk.js",
+    "main.js.map": "/tarot-trove-frontend/static/js/main.d307299a.chunk.js.map",
     "runtime-main.js": "/tarot-trove-frontend/static/js/runtime-main.356f3a5c.js",
     "runtime-main.js.map": "/tarot-trove-frontend/static/js/runtime-main.356f3a5c.js.map",
     "static/css/2.15a7a700.chunk.css": "/tarot-trove-frontend/static/css/2.15a7a700.chunk.css",
-    "static/js/2.8f6d093a.chunk.js": "/tarot-trove-frontend/static/js/2.8f6d093a.chunk.js",
-    "static/js/2.8f6d093a.chunk.js.map": "/tarot-trove-frontend/static/js/2.8f6d093a.chunk.js.map",
+    "static/js/2.809bcba0.chunk.js": "/tarot-trove-frontend/static/js/2.809bcba0.chunk.js",
+    "static/js/2.809bcba0.chunk.js.map": "/tarot-trove-frontend/static/js/2.809bcba0.chunk.js.map",
     "index.html": "/tarot-trove-frontend/index.html",
     "static/css/2.15a7a700.chunk.css.map": "/tarot-trove-frontend/static/css/2.15a7a700.chunk.css.map",
-    "static/css/main.47e41fea.chunk.css.map": "/tarot-trove-frontend/static/css/main.47e41fea.chunk.css.map",
-    "static/js/2.8f6d093a.chunk.js.LICENSE.txt": "/tarot-trove-frontend/static/js/2.8f6d093a.chunk.js.LICENSE.txt",
+    "static/css/main.b6a7accd.chunk.css.map": "/tarot-trove-frontend/static/css/main.b6a7accd.chunk.css.map",
+    "static/js/2.809bcba0.chunk.js.LICENSE.txt": "/tarot-trove-frontend/static/js/2.809bcba0.chunk.js.LICENSE.txt",
     "static/media/styles.css": "/tarot-trove-frontend/static/media/Canyon.6e3d0c39.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.356f3a5c.js",
     "static/css/2.15a7a700.chunk.css",
-    "static/js/2.8f6d093a.chunk.js",
-    "static/css/main.47e41fea.chunk.css",
-    "static/js/main.2fd05d31.chunk.js"
+    "static/js/2.809bcba0.chunk.js",
+    "static/css/main.b6a7accd.chunk.css",
+    "static/js/main.d307299a.chunk.js"
   ]
 }
