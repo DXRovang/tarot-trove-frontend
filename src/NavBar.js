@@ -20,19 +20,19 @@ return (<>
 <Navbar dark expand="md">
 <Nav className="mr-auto" navbar>
             <NavItem>
-  <NavLink href="/draws">Readings</NavLink>
+  <NavLink href={process.env.PUBLIC_URL +'/draws'}>Readings</NavLink>
   </NavItem>
   <NavItem>
-  <NavLink href="/draws/new">New Draw</NavLink>
+  <NavLink href={process.env.PUBLIC_URL +"/draws/new"}>New Draw</NavLink>
   </NavItem>
   <NavItem>
-  <NavLink href="/cards">Random Card</NavLink>
+  <NavLink href={process.env.PUBLIC_URL +"/cards"}>Random Card</NavLink>
   </NavItem>
   <NavItem>
-  <NavLink href="/majorarcana">Major Arcana</NavLink>
+  <NavLink href={process.env.PUBLIC_URL +"/majorarcana"}>Major Arcana</NavLink>
   </NavItem>
   <NavItem >
-  <NavLink  href="/minorarcana">Minor Arcana</NavLink>
+  <NavLink  href={process.env.PUBLIC_URL +"/minorarcana"}>Minor Arcana</NavLink>
   </NavItem>
   </Nav>
   {/* <Link to="/draws" className="NavLink">Readings</Link>
