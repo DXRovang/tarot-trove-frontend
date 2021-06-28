@@ -20,15 +20,15 @@ componentDidMount(){
         <>
         {/* <HashRouter basename='/'> */}
           <Switch>
-            <Route exact path='/cards'>
+            <Route exact path={process.env.PUBLIC_URL +'/cards'}>
                 <CardList cards={this.props.cards}/>
             </Route>
-            <Route path='/cards/:id' render={(routerProps) => 
+            <Route path={process.env.PUBLIC_URL +'/cards/:id'} render={(routerProps) => 
                 <Card {...routerProps} cards={this.props.cards} />}/>
-            <Route path='/majorarcana'>
+            <Route path={process.env.PUBLIC_URL +'/majorarcana'}>
                 <MajorArcana cards={this.props.cards}/>
             </Route>
-            <Route path='/minorarcana'>
+            <Route path={process.env.PUBLIC_URL +'/minorarcana'}>
                 <MinorArcana cards={this.props.cards}/>
             </Route>
           </Switch>

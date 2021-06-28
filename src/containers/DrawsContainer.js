@@ -21,11 +21,11 @@ componentDidMount(){
         <>
         {/* <HashRouter basename='/'> */}
           <Switch>
-          <Route path='/draws/new' render={(routerProps) => 
+          <Route path={process.env.PUBLIC_URL + '/draws/new'} render={(routerProps) => 
                 <DrawForm {...routerProps} cards={this.props.cards} draws={this.props.draws} />} /> 
-            <Route exact path='/draws' render={(routerProps) => 
+            <Route exact path={process.env.PUBLIC_URL +'/draws'} render={(routerProps) => 
                 <DrawList {...routerProps} draws={this.props.draws} />} />
-            <Route path='/draws/:id' render={(routerProps) => 
+            <Route path={process.env.PUBLIC_URL +'/draws/:id'} render={(routerProps) => 
               <>
                 <Draw {...routerProps} cards={this.props.cards} draws={this.props.draws} />
               </> 

@@ -20,7 +20,7 @@ return (<>
 <Navbar dark expand="md">
 <Nav className="mr-auto" navbar>
             <NavItem>
-  <NavLink href="tarot-trove-frontend/#/draws">Readings</NavLink>
+  <NavLink href="/draws">Readings</NavLink>
   </NavItem>
   <NavItem>
   <NavLink href="/draws/new">New Draw</NavLink>
