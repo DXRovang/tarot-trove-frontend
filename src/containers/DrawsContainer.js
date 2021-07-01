@@ -1,6 +1,6 @@
 
 import React from 'react'
-import {HashRouter, Route, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import { connect } from 'react-redux'
 import DrawForm from '../components/DrawForm'
 import DrawList from '../components/DrawList'
@@ -19,7 +19,6 @@ componentDidMount(){
     render(){
       return(
         <>
-        {/* <HashRouter basename='/'> */}
           <Switch>
           <Route path={process.env.PUBLIC_URL + '/draws/new'} render={(routerProps) => 
                 <DrawForm {...routerProps} cards={this.props.cards} draws={this.props.draws} />} /> 
@@ -31,7 +30,6 @@ componentDidMount(){
               </> 
             }/>
           </Switch>
-        {/* </HashRouter> */}
         </>
       )
     }

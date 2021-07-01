@@ -5,7 +5,6 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import drawReducer from './reducers/drawReducer'
 import cardReducer from './reducers/cardReducer'
-// import {HashRouter as Router} from 'react-router-dom'
 import {BrowserRouter as Router} from 'react-router-dom'
 import App from './App';
 
@@ -24,8 +23,7 @@ let store = createStore(combinedReducer, composeEnhancers(applyMiddleware(thunk)
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-      {/* <Router basename={`${process.env.PUBLIC_URL}/`}> */}
+      <Router basename={process.env.PUBLIC_URL}>
         <App />
       </Router>
     </Provider>

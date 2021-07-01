@@ -1,6 +1,6 @@
 
 import React from 'react'
-import {HashRouter, Route, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import { connect } from 'react-redux'
 import CardList from '../components/CardList'
 import Card from '../components/Card'
@@ -18,7 +18,6 @@ componentDidMount(){
     render(){
       return(
         <>
-        {/* <HashRouter basename='/'> */}
           <Switch>
             <Route exact path={process.env.PUBLIC_URL +'/cards'}>
                 <CardList cards={this.props.cards}/>
@@ -28,11 +27,11 @@ componentDidMount(){
             <Route path={process.env.PUBLIC_URL +'/majorarcana'}>
                 <MajorArcana cards={this.props.cards}/>
             </Route>
-            <Route path={process.env.PUBLIC_URL +'/minorarcana'}>
+            {/* <Route path={process.env.PUBLIC_URL +'/minorarcana'}> */}
+            <Route exact path='/minorarcana'>
                 <MinorArcana cards={this.props.cards}/>
             </Route>
           </Switch>
-        {/* </HashRouter> */}
         </>
       )
     }
