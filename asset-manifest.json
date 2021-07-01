@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tarot-trove-frontend/static/css/main.b6a7accd.chunk.css",
-    "main.js": "/tarot-trove-frontend/static/js/main.410e86b0.chunk.js",
-    "main.js.map": "/tarot-trove-frontend/static/js/main.410e86b0.chunk.js.map",
+    "main.js": "/tarot-trove-frontend/static/js/main.bd59eca1.chunk.js",
+    "main.js.map": "/tarot-trove-frontend/static/js/main.bd59eca1.chunk.js.map",
     "runtime-main.js": "/tarot-trove-frontend/static/js/runtime-main.356f3a5c.js",
     "runtime-main.js.map": "/tarot-trove-frontend/static/js/runtime-main.356f3a5c.js.map",
     "static/css/2.15a7a700.chunk.css": "/tarot-trove-frontend/static/css/2.15a7a700.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.15a7a700.chunk.css",
     "static/js/2.b556b0ef.chunk.js",
     "static/css/main.b6a7accd.chunk.css",
-    "static/js/main.410e86b0.chunk.js"
+    "static/js/main.bd59eca1.chunk.js"
   ]
 }
