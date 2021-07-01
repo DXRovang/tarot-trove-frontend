@@ -14,7 +14,7 @@ const MinorArcana = props =>{
       <div >{props.cards.slice(22,29).map(card => 
       <Col >
         <Card key={card.id}>
-          <Link to={process.env.PUBLIC_URL +`/cards/${card.id - 1}`}>
+          <Link to={`/cards/${card.id - 1}`}>
             <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
@@ -28,7 +28,7 @@ const MinorArcana = props =>{
       <div>{props.cards.slice(29,36).map(card => 
       <Col>
         <Card key={card.id}>
-          <Link to={process.env.PUBLIC_URL +`/cards/${card.id - 1}`}>
+          <Link to={`/cards/${card.id - 1}`}>
             <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle"tag="h5">{card.name}</CardTitle>
@@ -43,7 +43,7 @@ const MinorArcana = props =>{
       <div>{props.cards.slice(36,43).map(card => 
       <Col>
         <Card key={card.id}>
-          <Link to={process.env.PUBLIC_URL +`/cards/${card.id - 1}`}>
+          <Link to={`/cards/${card.id - 1}`}>
             <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
@@ -57,7 +57,7 @@ const MinorArcana = props =>{
       <div>{props.cards.slice(43,50).map(card => 
       <Col>
         <Card key={card.id}>
-          <Link to={process.env.PUBLIC_URL +`/cards/${card.id - 1}`}>
+          <Link to={`/cards/${card.id - 1}`}>
             <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
@@ -72,7 +72,7 @@ const MinorArcana = props =>{
       <div>{props.cards.slice(50,57).map(card => 
       <Col>
         <Card key={card.id}>
-          <Link to={process.env.PUBLIC_URL +`/cards/${card.id - 1}`}>
+          <Link to={`/cards/${card.id - 1}`}>
             <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
@@ -86,7 +86,7 @@ const MinorArcana = props =>{
       <div>{props.cards.slice(57,64).map(card => 
       <Col>
         <Card key={card.id}>
-          <Link to={process.env.PUBLIC_URL +`/cards/${card.id - 1}`}>
+          <Link to={`/cards/${card.id - 1}`}>
             <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
@@ -101,7 +101,7 @@ const MinorArcana = props =>{
       <div>{props.cards.slice(64,71).map(card => 
       <Col>
         <Card key={card.id}>
-          <Link to={process.env.PUBLIC_URL +`/cards/${card.id - 1}`}>
+          <Link to={`/cards/${card.id - 1}`}>
             <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
@@ -115,7 +115,7 @@ const MinorArcana = props =>{
       <div>{props.cards.slice(71,78).map(card => 
       <Col>
         <Card key={card.id}>
-          <Link to={process.env.PUBLIC_URL +`/cards/${card.id - 1}`}>
+          <Link to={`/cards/${card.id - 1}`}>
             <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>

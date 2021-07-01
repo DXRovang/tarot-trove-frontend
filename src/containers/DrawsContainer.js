@@ -20,11 +20,11 @@ componentDidMount(){
       return(
         <>
           <Switch>
-          <Route path={process.env.PUBLIC_URL + '/draws/new'} render={(routerProps) => 
+          <Route path='/draws/new' render={(routerProps) => 
                 <DrawForm {...routerProps} cards={this.props.cards} draws={this.props.draws} />} /> 
-            <Route exact path={process.env.PUBLIC_URL +'/draws'} render={(routerProps) => 
+            <Route exact path='/draws' render={(routerProps) => 
                 <DrawList {...routerProps} draws={this.props.draws} />} />
-            <Route path={process.env.PUBLIC_URL +'/draws/:id'} render={(routerProps) => 
+            <Route path='/draws/:id' render={(routerProps) => 
               <>
                 <Draw {...routerProps} cards={this.props.cards} draws={this.props.draws} />
               </> 

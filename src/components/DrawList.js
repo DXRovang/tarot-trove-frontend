@@ -47,7 +47,7 @@ render(){
           <div className="right list">{this.props.draws.draws ? this.props.draws.draws.map(draw => 
    
           <div key={draw.id}>
-            <Link className="list" to={process.env.PUBLIC_URL +`/draws/${draw.id}`}>{draw.layout}: {draw.created_at.slice(0,10)}</Link></div>
+            <Link className="list" to={`/draws/${draw.id}`}>{draw.layout}: {draw.created_at.slice(0,10)}</Link></div>
           ) : null}
           </div>
    
@@ -85,7 +85,7 @@ render(){
           </form><br></br>
   
         <div className="right list" >{this.props.draws.draws ? filterList.map(draw => <div key={draw.id}>
-            <Link className="list" to={process.env.PUBLIC_URL +`/draws/${draw.id}`}>{draw.layout}: {draw.created_at.slice(0,10)}</Link></div>
+            <Link className="list" to={`/draws/${draw.id}`}>{draw.layout}: {draw.created_at.slice(0,10)}</Link></div>
           ) : null}</div>
   
   {/* </Container> */}

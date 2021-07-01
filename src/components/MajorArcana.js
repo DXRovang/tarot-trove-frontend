@@ -13,7 +13,7 @@ const MajorArcana = props =>{
         <div>{props.cards.slice(0,1).map(card => 
         <Col>
           <Card key={card.id}>
-            <Link to={process.env.PUBLIC_URL +`/cards/${card.id - 1}`}>
+            <Link to={`/cards/${card.id - 1}`}>
               <CardImg top width="100%" src={card.image} />
               <CardBody>          
                 <CardTitle className="CardTitle"tag="h5">{card.name}</CardTitle>
@@ -28,7 +28,7 @@ const MajorArcana = props =>{
         <div>{props.cards.slice(1,8).map(card => 
         <Col>
           <Card key={card.id}>
-            <Link to={process.env.PUBLIC_URL +`/cards/${card.id - 1}`}>
+            <Link to={`/cards/${card.id - 1}`}>
               <CardImg top width="100%" src={card.image} />
               <CardBody>          
                 <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
@@ -43,7 +43,7 @@ const MajorArcana = props =>{
         <div>{props.cards.slice(8,15).map(card => 
         <Col>
           <Card key={card.id}>
-            <Link to={process.env.PUBLIC_URL +`/cards/${card.id - 1}`}>
+            <Link to={`/cards/${card.id - 1}`}>
               <CardImg top width="100%" src={card.image} />
               <CardBody>          
                 <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
