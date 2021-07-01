@@ -20,7 +20,7 @@ componentDidMount(){
       return(
         <>
           <Switch>
-          <Route path='/draws/new' render={(routerProps) => 
+            <Route path='/draws/new' render={(routerProps) => 
                 <DrawForm {...routerProps} cards={this.props.cards} draws={this.props.draws} />} /> 
             <Route exact path='/draws' render={(routerProps) => 
                 <DrawList {...routerProps} draws={this.props.draws} />} />
