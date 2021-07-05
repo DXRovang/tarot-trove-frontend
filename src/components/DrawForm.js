@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { createDraws } from '../actions/createDraws'
+import { Container, Row, Col } from 'reactstrap';
+import tarotb from '../assets/tarotb.jpg';
 
 
 class DrawForm extends React.Component{
@@ -13,22 +15,36 @@ class DrawForm extends React.Component{
 
   render() {
     return(
-      <>
-      <div className="center drawlist">
-        <form onSubmit={e => this.handleSumbit(e)}>
-          <select onChange={this.handleChange} name="layout" value={this.state.layout}>
-            <option>One-Card</option>
-            <option>Three-Cards</option>
-            <option>Five-Cards</option>
-            <option>Celtic Cross</option>
-          </select>
-          <button>Draw Cards</button>
-        </form>
-         
-      </div>
-      {/* <img className="back"src="tarotback.jpg"/>  */}
-      
-      </>
+      <Container>
+        <Row>
+          <Col sm="4"> 
+            <img className="first-card"src={tarotb}/>
+          </Col>
+          <Col sm="4">
+            <div className="center drawlist">
+              <form onSubmit={e => this.handleSumbit(e)}>
+                <select onChange={this.handleChange} name="layout" value={this.state.layout}>
+                  <option>One-Card</option>
+                  <option>Three-Cards</option>
+                  <option>Five-Cards</option>
+                  <option>Celtic Cross</option>
+                </select>
+                <button>Draw Cards</button>
+              </form>
+              <div className="blurb">
+                <p>There are many types of spreads for Tarot reading, and many ways to understand the layout of each draw.</p>
+                <p>The One-Card draw is typically a daily ritual for those who want to check in with the energy of the day, or have an immediate situation that they would like perspective on.</p>
+                <p>The Three-Card draw is often used as a simple timeline:  past, present, future.</p>
+                <p>There are many variants on the Five-Card draw. One that we have found particularly interesting labels them in this manner:  1) the circumstance, 2) the advice, 3) the lesson, 4) the loss, 5) the gain.</p>
+                <p>The Celtic-Cross is the most complicated of the spreads.  The cards are numbered from the center (the hidden card being 1 and the cross being 2), then moving clockwise from the bottom and finishing off on the right side from bottom to top.  1) the circumstance, 2) the obstacle, 3) the inner mind, 4) the past, 5) the outer appearance, 6) the future, 7) the querent's state of mind, 8) the querent's support, 9) hopes/fears, 10) the outcome.</p>
+              </div>
+            </div>
+          </Col>
+          <Col sm="4">
+            <img className="first-card"src={tarotb}/>
+          </Col>
+        </Row>
+      </Container>
     )
   }
 
@@ -133,36 +149,9 @@ class DrawForm extends React.Component{
     }
     return base
   }
-
-
 }
 
 export default connect(null,{createDraws})(DrawForm)
 
 
-// handleSumbit = (e) =>{
-  //   e.preventDefault() 
-  //   switch(this.state.layout){
-  //     case "One-Card":
-  //     let formData = {
-  //       layout: this.state.layout,
-  //       card_ids: [this.getOneCard(this.props.cards)],
-  //       orientations: [this.randBool()]
-  //     }
-  //   case "Three-Cards":
-  //     let formData = {
-  //       layout: this.state.layout,
-  //       card_ids: this.getThreeCards(this.props.cards),
-  //       orientations: this.threeBool()
-  //      }
-  //   case "Five-Cards":
-  //     let formData = {
-  //       layout: this.state.layout,
-  //       card_ids: this.getFiveCards(this.props.cards),
-  //       orientations: this.fiveBool()
-  //      }
-  //     }
-  //      this.props.createDraws(formData)
-  //      this.props.history.push('/draws')
-    
-  // }
+

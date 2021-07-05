@@ -6,7 +6,7 @@ const Card = props =>{
   
   return(
     <div className="single">
-    {card ? <img className="card left"src={card.image}/> : null}<br></br>
+    {card ? <img className="card left size"src={card.image}/> : null}<br></br>
     <div className="left">
     <div>Description: {card ? card.desc : null}</div><br></br>
     <div>Meaning(up): {card ? card.meaning_up : null}</div><br></br>

@@ -15,7 +15,8 @@
   background-color: darkred;
 }
 .CardTitle{
-  color:  rgb(29, 25, 13)
+  color:  rgb(29, 25, 13);
+  text-decoration: none;
 }
 
 .base{
@@ -46,17 +47,6 @@
   margin-right: auto;
   margin-top: 10px;
 }
-/* .readimg{
-  height: 300px;
-  display: block;
-
- 
-  margin-bottom: 10px;
-  position: fixed;
-  float: right;
-  clear: right;
-  margin-right: 15px;
-} */
 
 .themed-container{
   margin: 10px;
@@ -70,21 +60,10 @@
   border-radius: 2px;
   border-color: black;
   padding: 5px;
-  /* align-content: center; */
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  /* width: 95%; */
+  width: 100%;
 }
 body{
-  background-image: url("Canyon.jpg");
-  background-size: cover;
-}
-.right{
-  float: right;
-  clear: right;
-  margin-right: 15px;
+  background-color: darkslategray;
 }
 .title{
   border-style: solid;
@@ -94,20 +73,22 @@ body{
   text-align: center;
   font-size: 58px;
   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-  color: rgb(13, 13, 165);
+  color: rgb(138, 138, 190);
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .center{
   text-align: center;
 }
 .xenter{
-  align-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 2%;
 }
 .left{
   margin-left: 4%;
   float: left;
+}
+.right{
+  float: right;
+  clear: right;
 }
 .blurb{
   font-size: 20px;
@@ -138,9 +119,6 @@ option{
   color: rgb(255, 239, 122);
   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
   text-shadow: 0 0 3px rgb(143, 28, 28);
-  /* color: rgb(222, 235, 226);
-  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-  text-shadow: 0 0 3px rgb(8, 3, 3); */
   margin-right: 4%;
 }
 .drawlist{
@@ -148,4 +126,16 @@ option{
 }
 img{
   box-shadow: 0 0 10px rgb(24, 22, 37);
+}
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+}
+.first-card{
+  height: 60vh;
+  width: auto;
+  margin-left: 20%;
 }

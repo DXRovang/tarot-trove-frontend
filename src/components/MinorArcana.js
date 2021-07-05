@@ -8,14 +8,16 @@ import {
 const MinorArcana = props =>{
   return(  
     
-    <Container className="left">
-      <div className="suit" >WANDS</div>
+    <Container>
+      <div className="suit">WANDS</div>
     <Row className="xenter" >
       <div >{props.cards.slice(22,29).map(card => 
       <Col >
         <Card key={card.id}>
           <Link to={`/cards/${card.id - 1}`}>
+            {/* <CardImg className="size" src={card.image} /> */}
             <CardImg top width="100%" src={card.image} />
+
             <CardBody>          
               <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
             </CardBody>
@@ -29,7 +31,7 @@ const MinorArcana = props =>{
       <Col>
         <Card key={card.id}>
           <Link to={`/cards/${card.id - 1}`}>
-            <CardImg top width="100%" src={card.image} />
+          <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle"tag="h5">{card.name}</CardTitle>
             </CardBody>
@@ -44,7 +46,7 @@ const MinorArcana = props =>{
       <Col>
         <Card key={card.id}>
           <Link to={`/cards/${card.id - 1}`}>
-            <CardImg top width="100%" src={card.image} />
+          <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
             </CardBody>
@@ -58,7 +60,7 @@ const MinorArcana = props =>{
       <Col>
         <Card key={card.id}>
           <Link to={`/cards/${card.id - 1}`}>
-            <CardImg top width="100%" src={card.image} />
+          <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
             </CardBody>
@@ -73,7 +75,7 @@ const MinorArcana = props =>{
       <Col>
         <Card key={card.id}>
           <Link to={`/cards/${card.id - 1}`}>
-            <CardImg top width="100%" src={card.image} />
+          <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
             </CardBody>
@@ -87,7 +89,7 @@ const MinorArcana = props =>{
       <Col>
         <Card key={card.id}>
           <Link to={`/cards/${card.id - 1}`}>
-            <CardImg top width="100%" src={card.image} />
+          <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
             </CardBody>
@@ -102,7 +104,7 @@ const MinorArcana = props =>{
       <Col>
         <Card key={card.id}>
           <Link to={`/cards/${card.id - 1}`}>
-            <CardImg top width="100%" src={card.image} />
+          <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
             </CardBody>
@@ -116,7 +118,7 @@ const MinorArcana = props =>{
       <Col>
         <Card key={card.id}>
           <Link to={`/cards/${card.id - 1}`}>
-            <CardImg top width="100%" src={card.image} />
+          <CardImg top width="100%" src={card.image} />
             <CardBody>          
               <CardTitle className="CardTitle" tag="h5">{card.name}</CardTitle>
             </CardBody>

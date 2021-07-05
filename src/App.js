@@ -9,7 +9,7 @@ class App extends React.Component {
       <div className="App">
         <NavBar/>
           <div className="title">
-            Tarot Trove
+            the Tarot Trove
           </div>
         <DrawsContainer />
         <CardsContainer />
