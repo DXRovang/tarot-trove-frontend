@@ -38,6 +38,7 @@ componentDidMount(){
 }
 
 const mapStateToProps = (state) =>{
+  // debugger
   return {
     cards: state.cards
   }

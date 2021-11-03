@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Card = props =>{
-  // debugger
+  debugger
   let card = props.cards[props.match.params.id]
   
   return(
