@@ -57,11 +57,11 @@ class DrawForm extends React.Component{
   // would like to do this as a switch
   handleSumbit = (e) =>{
     e.preventDefault() 
-    
+    debugger
     if(this.state.layout == "One-Card"){
     let formData = {
       layout: this.state.layout,
-      card_ids: [this.getOneCard(this.props.cards)],
+      card_ids: [this.getCards(this.props.cards)],
       orientations: [this.randBool()]
      }
      this.props.createDraws(formData)
@@ -69,7 +69,7 @@ class DrawForm extends React.Component{
     }else if(this.state.layout == "Three-Cards"){
       let formData = {
         layout: this.state.layout,
-        card_ids: this.getThreeCards(this.props.cards),
+        card_ids: this.getCards(this.props.cards),
         orientations: this.threeBool()
        }
        this.props.createDraws(formData)
@@ -77,7 +77,7 @@ class DrawForm extends React.Component{
     }else if(this.state.layout == "Five-Cards"){
       let formData = {
         layout: this.state.layout,
-        card_ids: this.getFiveCards(this.props.cards),
+        card_ids: this.getCards(this.props.cards),
         orientations: this.fiveBool()
        }
        this.props.createDraws(formData)
@@ -85,33 +85,44 @@ class DrawForm extends React.Component{
     }else if(this.state.layout == "Celtic Cross"){
       let formData = {
         layout: this.state.layout,
-        card_ids: this.getTenCards(this.props.cards),
+        card_ids: this.getCards(this.props.cards),
         orientations: this.tenBool()
        }
        this.props.createDraws(formData)
        this.props.history.push(process.env.PUBLIC_URL +'/draws')
     }
   }
-  
-  // look into refactoring down to 2 methods
-  getOneCard = (arr) => {
-    const randomIndex = Math.floor(Math.random() * arr.length);
-    const item = arr[randomIndex];
-    return item.id;
-  }
-  randBool = () => {
-    const rb = Math.random() < 0.5;
-    return rb;
-  }
-  // how does this work??
-  getThreeCards = (arr) => {
+  getCards = (arr) => {
     const base = [];
-    while(base.length < 3){
+    while(base.length < arr.length){
       const r = Math.floor(Math.random() * arr.length);
       if(base.indexOf(r) === -1) base.push(r);
     }
     return base;
   }
+
+
+  // look into refactoring down to 2 methods
+  // getOneCard = (arr) => {
+  //   const randomIndex = Math.floor(Math.random() * arr.length);
+  //   const item = arr[randomIndex];
+  //   return item.id;
+  // }
+  randBool = () => {
+    const rb = Math.random() < 0.5;
+    return rb;
+  }
+ 
+  // getThreeCards = (arr) => {
+  //   const base = [];
+  //   while(base.length < 3){
+  //     const r = Math.floor(Math.random() * arr.length);
+  //     if(base.indexOf(r) === -1) base.push(r);
+  //     // indexOf would return -1 if the array didn't contain the card
+  //     // so as long as the card isn't already there, this if pushes it in
+  //   }
+  //   return base;
+  // }
   threeBool = () => {
     const base = []
     while(base.length < 3){
@@ -119,14 +130,14 @@ class DrawForm extends React.Component{
     }
     return base
   }
-  getFiveCards = (arr) => {
-    const base = [];
-    while(base.length < 5){
-      const r = Math.floor(Math.random() * arr.length);
-      if(base.indexOf(r) === -1) base.push(r);
-    }
-    return base;
-  }
+  // getFiveCards = (arr) => {
+  //   const base = [];
+  //   while(base.length < 5){
+  //     const r = Math.floor(Math.random() * arr.length);
+  //     if(base.indexOf(r) === -1) base.push(r);
+  //   }
+  //   return base;
+  // }
   fiveBool = () => {
     const base = []
     while(base.length < 5){
@@ -134,14 +145,14 @@ class DrawForm extends React.Component{
     }
     return base
   }
-  getTenCards = (arr) => {
-    const base = [];
-    while(base.length < 10){
-      const r = Math.floor(Math.random() * arr.length);
-      if(base.indexOf(r) === -1) base.push(r);
-    }
-    return base;
-  }
+  // getTenCards = (arr) => {
+  //   const base = [];
+  //   while(base.length < 10){
+  //     const r = Math.floor(Math.random() * arr.length);
+  //     if(base.indexOf(r) === -1) base.push(r);
+  //   }
+  //   return base;
+  // }
   tenBool = () => {
     const base = []
     while(base.length < 10){
