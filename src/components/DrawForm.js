@@ -70,7 +70,7 @@ class DrawForm extends React.Component{
     }else if(this.state.layout == "Three-Cards"){
       let formData = {
         layout: this.state.layout,
-        card_ids: this.getCards(this.props.cards),
+        card_ids: this.getThreeCards(this.props.cards),
         orientations: this.threeBool()
        }
        this.props.createDraws(formData)
@@ -78,7 +78,7 @@ class DrawForm extends React.Component{
     }else if(this.state.layout == "Five-Cards"){
       let formData = {
         layout: this.state.layout,
-        card_ids: this.getCards(this.props.cards),
+        card_ids: this.getFiveCards(this.props.cards),
         orientations: this.fiveBool()
        }
        this.props.createDraws(formData)
@@ -86,7 +86,7 @@ class DrawForm extends React.Component{
     }else if(this.state.layout == "Celtic Cross"){
       let formData = {
         layout: this.state.layout,
-        card_ids: this.getCards(this.props.cards),
+        card_ids: this.getTenCards(this.props.cards),
         orientations: this.tenBool()
        }
        this.props.createDraws(formData)
@@ -98,19 +98,27 @@ class DrawForm extends React.Component{
     const item = arr[randomIndex];
     return item.id;
   }
-  getCards = (arr) => {
-    const base = [];
-    const num = arr.length;
-    while(base.length < num){
-      const r = Math.floor(Math.random() * num);
-      if(base.indexOf(r) === -1) base.push(r);
-    }
-    return base;
-  }
+  // getCards = (arr) => {
+  //   const base = [];
+  //   const num = arr.length;
+  //   while(base.length < num){
+  //     const r = Math.floor(Math.random() * num);
+  //     if(base.indexOf(r) === -1) base.push(r);
+  //   }
+  //   return base;
+  // }
 
   randBool = () => {
     const rb = Math.random() < 0.5;
     return rb;
+  }
+  getThreeCards = (arr) => {
+    const base = [];
+    while(base.length < 3){
+      const r = Math.floor(Math.random() * arr.length);
+      if(base.indexOf(r) === -1) base.push(r);
+    }
+    return base;
   }
 
   //     // indexOf would return -1 if the array didn't contain the card
@@ -123,6 +131,14 @@ class DrawForm extends React.Component{
     }
     return base
   }
+  getFiveCards = (arr) => {
+    const base = [];
+    while(base.length < 5){
+      const r = Math.floor(Math.random() * arr.length);
+      if(base.indexOf(r) === -1) base.push(r);
+    }
+    return base;
+  }
 
   fiveBool = () => {
     const base = []
@@ -130,6 +146,14 @@ class DrawForm extends React.Component{
       base.push(this.randBool())
     }
     return base
+  }
+  getTenCards = (arr) => {
+    const base = [];
+    while(base.length < 10){
+      const r = Math.floor(Math.random() * arr.length);
+      if(base.indexOf(r) === -1) base.push(r);
+    }
+    return base;
   }
 
   tenBool = () => {
