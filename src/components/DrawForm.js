@@ -64,9 +64,7 @@ class DrawForm extends React.Component{
       orientations: [this.randBool()]
      }
      this.props.createDraws(formData)
-     this.props.history.push(
-      //  process.env.PUBLIC_URL +
-      '/draws')
+     this.props.history.push(process.env.PUBLIC_URL +'/draws')
     }else if(this.state.layout == "Three-Cards"){
       let formData = {
         layout: this.state.layout,
