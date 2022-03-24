@@ -94,8 +94,9 @@ class DrawForm extends React.Component{
   }
   getCards = (arr) => {
     const base = [];
-    while(base.length < arr.length){
-      const r = Math.floor(Math.random() * arr.length);
+    const num = arr.length;
+    while(base.length < num){
+      const r = Math.floor(Math.random() * num);
       if(base.indexOf(r) === -1) base.push(r);
     }
     return base;
