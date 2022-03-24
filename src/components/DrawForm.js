@@ -101,28 +101,14 @@ class DrawForm extends React.Component{
     return base;
   }
 
-
-  // look into refactoring down to 2 methods
-  // getOneCard = (arr) => {
-  //   const randomIndex = Math.floor(Math.random() * arr.length);
-  //   const item = arr[randomIndex];
-  //   return item.id;
-  // }
   randBool = () => {
     const rb = Math.random() < 0.5;
     return rb;
   }
- 
-  // getThreeCards = (arr) => {
-  //   const base = [];
-  //   while(base.length < 3){
-  //     const r = Math.floor(Math.random() * arr.length);
-  //     if(base.indexOf(r) === -1) base.push(r);
+
   //     // indexOf would return -1 if the array didn't contain the card
   //     // so as long as the card isn't already there, this if pushes it in
-  //   }
-  //   return base;
-  // }
+
   threeBool = () => {
     const base = []
     while(base.length < 3){
@@ -130,14 +116,7 @@ class DrawForm extends React.Component{
     }
     return base
   }
-  // getFiveCards = (arr) => {
-  //   const base = [];
-  //   while(base.length < 5){
-  //     const r = Math.floor(Math.random() * arr.length);
-  //     if(base.indexOf(r) === -1) base.push(r);
-  //   }
-  //   return base;
-  // }
+
   fiveBool = () => {
     const base = []
     while(base.length < 5){
@@ -145,14 +124,7 @@ class DrawForm extends React.Component{
     }
     return base
   }
-  // getTenCards = (arr) => {
-  //   const base = [];
-  //   while(base.length < 10){
-  //     const r = Math.floor(Math.random() * arr.length);
-  //     if(base.indexOf(r) === -1) base.push(r);
-  //   }
-  //   return base;
-  // }
+
   tenBool = () => {
     const base = []
     while(base.length < 10){
