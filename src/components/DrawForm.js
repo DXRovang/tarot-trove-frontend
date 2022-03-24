@@ -56,7 +56,6 @@ class DrawForm extends React.Component{
 
   // would like to do this as a switch
   handleSumbit = (e) =>{
-    // debugger
     e.preventDefault() 
     if(this.state.layout == "One-Card"){
     let formData = {
@@ -64,9 +63,10 @@ class DrawForm extends React.Component{
       card_ids: [this.getOneCard(this.props.cards)],
       orientations: [this.randBool()]
      }
-    //  debugger
      this.props.createDraws(formData)
-     this.props.history.push(process.env.PUBLIC_URL +'/draws')
+     this.props.history.push(
+      //  process.env.PUBLIC_URL +
+      '/draws')
     }else if(this.state.layout == "Three-Cards"){
       let formData = {
         layout: this.state.layout,
