@@ -54,116 +54,145 @@ class DrawForm extends React.Component{
     })
   }
 
-  // would like to do this as a switch
   handleSumbit = (e) =>{
     e.preventDefault() 
-    if(this.state.layout == "One-Card"){
+    let num = this.renderNum(this.state.layout);
     let formData = {
       layout: this.state.layout,
-      card_ids: [this.getOneCard(this.props.cards)],
-      orientations: [this.randBool()]
+      card_ids: this.getCards(this.props.cards, num),
+      orientations: this.renderBool(num)
      }
      this.props.createDraws(formData)
      this.props.history.push(process.env.PUBLIC_URL +'/draws')
-    }else if(this.state.layout == "Three-Cards"){
-      let formData = {
-        layout: this.state.layout,
-        card_ids: this.getThreeCards(this.props.cards),
-        orientations: this.threeBool()
-       }
-       this.props.createDraws(formData)
-       this.props.history.push('/draws')
-    }else if(this.state.layout == "Five-Cards"){
-      let formData = {
-        layout: this.state.layout,
-        card_ids: this.getFiveCards(this.props.cards),
-        orientations: this.fiveBool()
-       }
-       this.props.createDraws(formData)
-       this.props.history.push('/draws')
-    }else if(this.state.layout == "Celtic Cross"){
-      let formData = {
-        layout: this.state.layout,
-        card_ids: this.getTenCards(this.props.cards),
-        orientations: this.tenBool()
-       }
-       this.props.createDraws(formData)
-       this.props.history.push(process.env.PUBLIC_URL +'/draws')
+
+}
+  getCards = (arr, num) => {
+    const base = [];
+    while(base.length < num){
+      const r = Math.floor(Math.random() * arr.length);
+      if(base.indexOf(r) === -1) base.push(r);
     }
+    return base;
   }
-  getOneCard = (arr) => {
-    const randomIndex = Math.floor(Math.random() * arr.length);
-    const item = arr[randomIndex];
-    return item.id;
-  }
-  // getCards = (arr) => {
-  //   const base = [];
-  //   const num = arr.length;
-  //   while(base.length < num){
-  //     const r = Math.floor(Math.random() * num);
-  //     if(base.indexOf(r) === -1) base.push(r);
-  //   }
-  //   return base;
-  // }
 
   randBool = () => {
     const rb = Math.random() < 0.5;
     return rb;
   }
-  getThreeCards = (arr) => {
-    const base = [];
-    while(base.length < 3){
-      const r = Math.floor(Math.random() * arr.length);
-      if(base.indexOf(r) === -1) base.push(r);
-    }
-    return base;
-  }
 
-  //     // indexOf would return -1 if the array didn't contain the card
-  //     // so as long as the card isn't already there, this if pushes it in
+renderBool = (param) =>{
+  const base = []
+  while(base.length < param){
+    base.push(this.randBool())
+  }
+  return base
+}
 
-  threeBool = () => {
-    const base = []
-    while(base.length < 3){
-      base.push(this.randBool())
-    }
-    return base
+renderNum = (param) =>{
+  switch(param) {
+    case 'One-Card':
+      return 1;
+    case 'Three-Cards':
+      return 3;
+    case 'Five-Cards':
+      return 5;
+    case 'Celtic Cross':
+      return 10;
   }
-  getFiveCards = (arr) => {
-    const base = [];
-    while(base.length < 5){
-      const r = Math.floor(Math.random() * arr.length);
-      if(base.indexOf(r) === -1) base.push(r);
-    }
-    return base;
-  }
+}
 
-  fiveBool = () => {
-    const base = []
-    while(base.length < 5){
-      base.push(this.randBool())
-    }
-    return base
-  }
-  getTenCards = (arr) => {
-    const base = [];
-    while(base.length < 10){
-      const r = Math.floor(Math.random() * arr.length);
-      if(base.indexOf(r) === -1) base.push(r);
-    }
-    return base;
-  }
-
-  tenBool = () => {
-    const base = []
-    while(base.length < 10){
-      base.push(this.randBool())
-    }
-    return base
-  }
 }
 
 export default connect(null,{createDraws})(DrawForm)
 
 
 
+
+
+
+
+
+    // }else if(this.state.layout == "Three-Cards"){
+    //   let formData = {
+    //     layout: this.state.layout,
+    //     card_ids: this.getCards(this.props.cards, num),
+    //     orientations: this.renderBool(num)
+    //    }
+    //    debugger
+    //    this.props.createDraws(formData)
+    //    this.props.history.push('/draws')
+    // }else if(this.state.layout == "Five-Cards"){
+    //   let formData = {
+    //     layout: this.state.layout,
+    //     card_ids: this.getCards(this.props.cards, num),
+    //     orientations: this.renderBool(num)
+    //    }
+    //    this.props.createDraws(formData)
+    //    this.props.history.push('/draws')
+    // }else if(this.state.layout == "Celtic Cross"){
+    //   let formData = {
+    //     layout: this.state.layout,
+    //     card_ids: this.getCards(this.props.cards, num),
+    //     orientations: this.renderBool(num)
+      //  }
+      //  this.props.createDraws(formData)
+      //  this.props.history.push(process.env.PUBLIC_URL +'/draws')
+    // }
+  
+  // getOneCard = (arr) => {
+  //   const randomIndex = Math.floor(Math.random() * arr.length);
+  //   const item = arr[randomIndex];
+  //   return item.id;
+  // }
+
+  // getThreeCards = (arr) => {
+  //   const base = [];
+  //   while(base.length < 3){
+  //     const r = Math.floor(Math.random() * arr.length);
+  //     if(base.indexOf(r) === -1) base.push(r);
+  //   }
+  //   return base;
+  // }
+
+  //     // indexOf would return -1 if the array didn't contain the card
+  //     // so as long as the card isn't already there, this if pushes it in
+
+  // threeBool = () => {
+  //   const base = []
+  //   while(base.length < 3){
+  //     base.push(this.randBool())
+  //   }
+  //   return base
+  // }
+  // getFiveCards = (arr) => {
+  //   const base = [];
+  //   while(base.length < 5){
+  //     const r = Math.floor(Math.random() * arr.length);
+  //     if(base.indexOf(r) === -1) base.push(r);
+  //   }
+  //   return base;
+  // }
+
+  // fiveBool = () => {
+  //   const base = []
+  //   while(base.length < 5){
+  //     base.push(this.randBool())
+  //   }
+  //   return base
+  // }
+  // getTenCards = (arr) => {
+  //   const base = [];
+  //   while(base.length < 10){
+  //     const r = Math.floor(Math.random() * arr.length);
+  //     if(base.indexOf(r) === -1) base.push(r);
+  //   }
+  //   return base;
+  // }
+
+  // tenBool = () => {
+  //   const base = []
+  //   while(base.length < 10){
+  //     base.push(this.randBool())
+  //   }
+  //   return base
+  // }
