@@ -92,6 +92,7 @@ class DrawForm extends React.Component {
     debugger
     // this.props.history.push(process.env.PUBLIC_URL + "/draws");
     this.props.history.push('/draws')
+    // this.props.history.push(`/draws/${this.props.draws.draws[this.props.draws.draws.length - 1].id}`)
   };
 
   getCards = (arr, num) => {
