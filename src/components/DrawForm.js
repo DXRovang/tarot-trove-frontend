@@ -20,7 +20,7 @@ class DrawForm extends React.Component {
           </Col>
           <Col sm="4">
             <div className="center drawlist">
-              <form onSubmit={(e) => this.handleSumbit(e)}>
+              <form onSubmit={(e) => this.handleSubmit(e)}>
                 <select
                   onChange={this.handleChange}
                   name="layout"
@@ -80,7 +80,7 @@ class DrawForm extends React.Component {
     });
   };
 
-  handleSumbit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
     let num = this.renderNum(this.state.layout);
     let formData = {
@@ -89,11 +89,13 @@ class DrawForm extends React.Component {
       orientations: this.renderBool(num),
     };
     this.props.createDraws(formData);
-    debugger
-    // this.props.history.push(process.env.PUBLIC_URL + "/draws");
     this.props.history.push('/draws')
-    // this.props.history.push(`/draws/${this.props.draws.draws[this.props.draws.draws.length - 1].id}`)
   };
+
+  // this.props.history.push(process.env.PUBLIC_URL + "/draws");
+  // this.props.history.push(`/draws/${this.props.draws.draws[this.props.draws.draws.length - 1].id}`)
+
+
 
   getCards = (arr, num) => {
     const base = [];
