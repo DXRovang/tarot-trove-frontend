@@ -132,13 +132,3 @@ class DrawForm extends React.Component {
 export default connect(null, { createDraws })(DrawForm);
 
 
-
-  //   setTimeout(()=>{
-  // this.props.history.push(`/draws/${this.props.draws.draws[this.props.draws.draws.length].id}`)
-
-  //   }, 2000)
-
-  // this.props.history.push(process.env.PUBLIC_URL + "/draws");
-  // this.props.history.push(`/draws/${this.props.draws.draws[this.props.draws.draws.length - 1].id}`)
-
-
