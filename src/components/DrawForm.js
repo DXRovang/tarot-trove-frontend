@@ -92,6 +92,14 @@ class DrawForm extends React.Component {
     this.props.history.push('/draws')
   };
 
+<<<<<<< HEAD
+=======
+  // this.props.history.push(process.env.PUBLIC_URL + "/draws");
+  // this.props.history.push(`/draws/${this.props.draws.draws[this.props.draws.draws.length - 1].id}`)
+
+
+
+>>>>>>> e86303aaf8491ac41cf97c99cbc32a05a592915b
   getCards = (arr, num) => {
     const base = [];
     while (base.length < num) {
@@ -130,5 +138,8 @@ class DrawForm extends React.Component {
 }
 
 export default connect(null, { createDraws })(DrawForm);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e86303aaf8491ac41cf97c99cbc32a05a592915b

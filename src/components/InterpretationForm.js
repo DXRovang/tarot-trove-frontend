@@ -14,7 +14,7 @@ class InterpretationForm extends React.Component{
     })
   }
 
-  handleSumbit = (e) =>{
+  handleSubmit = (e) =>{
     e.preventDefault()
     this.props.createInterpretations(this.state, this.props.draw.id)
     this.setState({
@@ -26,7 +26,7 @@ class InterpretationForm extends React.Component{
   render() {
     return(
       <div className="Field">
-        <form onSubmit={e => this.handleSumbit(e)}>
+        <form onSubmit={e => this.handleSubmit(e)}>
           <textarea onChange={this.handleChange} 
           type='text' name="body" value={this.state.body}/><br></br>
           {/* name should match what's in the state */}
